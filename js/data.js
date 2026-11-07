@@ -211,6 +211,8 @@ const TRADING_DATA = {
       influencer_name: "Data Trader (3,969,307 Views • 194,911 Likes)",
       claim_title: "#1 Most Viewed Trading Strategy Video — ICT Fair Value Gap Scalping",
       youtube_url: "https://www.youtube.com/watch?v=ZX-Tp4zgJYc",
+      live_published_youtube_url: "https://www.youtube.com/watch?v=Wf9c5tRQSso",
+      live_youtube_id: "Wf9c5tRQSso",
       video_src: "videos/influenzian_fvg_remix_60s_1080p.mp4",
       video_src_1080p: "videos/influenzian_fvg_remix_60s_1080p.mp4",
       video_src_360p: "videos/influenzian_fvg_remix_60s_360p.mp4",

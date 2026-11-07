@@ -1,0 +1,14 @@
+# Secrets & tokens (DO NOT COMMIT)
+client_secrets*.json
+youtube_token.json
+.oauth_pending.json
+*.token.json
+
+# Large video render binaries (keep previews only or store on releases)
+videos/*.mp4
+!videos/*360p*.mp4
+
+# Python
+__pycache__/
+*.pyc
+.venv/

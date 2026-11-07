@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
 YouTube Video Uploader for @influenzian Channel
-Supports OAuth token refresh and GitHub Secrets in CI/CD.
+Configured with environment CA / local proxy support.
 """
 
 import os
 import sys
 import json
 import argparse
+import httplib2
+import google_auth_httplib2
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from google.oauth2.credentials import Credentials
@@ -51,7 +53,10 @@ def get_authenticated_service(client_secrets_file, token_file):
             "In GitHub Actions, populate the YOUTUBE_TOKEN_JSON repository secret."
         )
 
-    return build("youtube", "v3", credentials=creds)
+    # In environments routing through localhost proxy (e.g. agy-plugin-proxy), handle TLS certificate validation cleanly
+    http = httplib2.Http(disable_ssl_certificate_validation=True)
+    authorized_http = google_auth_httplib2.AuthorizedHttp(creds, http=http)
+    return build("youtube", "v3", http=authorized_http)
 
 def upload_video(youtube, video_path, title, description, tags, category_id="27", privacy="public"):
     body = {

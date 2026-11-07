@@ -73,7 +73,13 @@ function renderActiveClaim(claimId) {
       </div>
 
       <div class="flex items-center gap-2">
-        <a href="${claim.youtube_url}" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-50 text-red-700 border border-red-200 text-xs font-mono font-bold hover:bg-red-100 transition flex items-center gap-1.5 shadow-sm">
+        ${claim.live_published_youtube_url ? `
+          <a href="${claim.live_published_youtube_url}" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 text-white text-xs font-mono font-bold hover:bg-red-700 transition flex items-center gap-1.5 shadow-sm">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Live on @influenzian</span>
+          </a>
+        ` : ''}
+        <a href="${claim.youtube_url}" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 text-xs font-mono font-bold hover:bg-slate-200 transition flex items-center gap-1.5 shadow-sm">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           <span>Watch Original Video</span>
         </a>
