@@ -91,9 +91,9 @@ function renderActiveClaim(claimId) {
             Video Player
           </span>
           <div class="flex items-center gap-1 bg-[#0d131f] p-1 rounded-lg border border-[#1e293b]">
-            <button onclick="switchVideoFormat('greenscreen', '${claim.video_src_greenscreen || claim.video_src}')" id="btn-format-greenscreen" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white">Green Screen Remix</button>
+            <button onclick="switchVideoFormat('hd', '${claim.video_src_1080p || claim.video_src}')" id="btn-format-hd" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white">1080p 60s Remix</button>
+            <button onclick="switchVideoFormat('preview', '${claim.video_src_360p || claim.video_src}')" id="btn-format-preview" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">360p</button>
             <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">9:16 Shorts</button>
-            <button onclick="switchVideoFormat('landscape', 'videos/influenzian_watch_with_live_reaction_360p.mp4')" id="btn-format-landscape" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">16:9 Split</button>
           </div>
         </div>
         
@@ -199,8 +199,8 @@ function renderActiveClaim(claimId) {
 
 function switchVideoFormat(format, src) {
   const vid = document.getElementById('claim-active-video');
-  const btnGreenScreen = document.getElementById('btn-format-greenscreen');
-  const btnLandscape = document.getElementById('btn-format-landscape');
+  const btnHd = document.getElementById('btn-format-hd');
+  const btnPreview = document.getElementById('btn-format-preview');
   const btnShorts = document.getElementById('btn-format-shorts');
   if (!vid) return;
 
@@ -208,16 +208,15 @@ function switchVideoFormat(format, src) {
   vid.load();
   vid.play().catch(() => {});
 
-  // Reset classes
-  [btnGreenScreen, btnLandscape, btnShorts].forEach(b => {
+  [btnHd, btnPreview, btnShorts].forEach(b => {
     if (b) b.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
   });
 
-  if (format === 'greenscreen' && btnGreenScreen) {
-    btnGreenScreen.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white";
+  if (format === 'hd' && btnHd) {
+    btnHd.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
+  } else if (format === 'preview' && btnPreview) {
+    btnPreview.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white";
   } else if (format === 'shorts' && btnShorts) {
-    btnShorts.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
-  } else if (format === 'landscape' && btnLandscape) {
-    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600 text-white";
+    btnShorts.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600 text-white";
   }
 }
