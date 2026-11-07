@@ -208,20 +208,20 @@ const TRADING_DATA = {
   youtube_claims: [
     {
       id: "claim_001",
-      influencer_name: "@TradeIQ / @TheMovingAverage",
-      claim_title: "The #1 ICT Fair Value Gap Scalping Strategy (85% Win Rate Claim)",
-      youtube_url: "https://www.youtube.com/watch?v=3Os-VVyjPQc",
+      influencer_name: "Data Trader (3,969,307 Views • 194,911 Likes)",
+      claim_title: "#1 Most Viewed Trading Strategy Video — ICT Fair Value Gap Scalping",
+      youtube_url: "https://www.youtube.com/watch?v=ZX-Tp4zgJYc",
       video_src: "videos/influenzian_watch_with_live_reaction_360p.mp4",
-      claimed_sample: "30 cherry-picked setups shown on YouTube",
+      claimed_sample: "3.9M Views Viral FVG Scalping Demonstration",
       claimed_metrics: {
-        win_rate: "85.0%",
-        profit_factor: "4.80",
-        max_drawdown: "3.0%"
+        win_rate: "80.0%+",
+        profit_factor: "3.50",
+        max_drawdown: "5.0%"
       },
       empirical_metrics: {
         sample_period: "Nov 2021 – Nov 2026 (5 Years)",
         total_trades: 782,
-        win_rate: "54.2%",
+        win_rate: "39.2% (1-Yr 7-Asset) / 54.2% (5-Yr)",
         profit_factor: "1.94",
         max_drawdown: "-14.8%",
         total_return: "+184.6%"
@@ -229,7 +229,7 @@ const TRADING_DATA = {
       verdict: {
         badge: "VERIFIED WITH CAVEATS",
         badge_class: "bg-amber-500/20 text-amber-300 border-amber-500/40",
-        summary: "The strategy is undeniably profitable over 5 years (+184.6%), but the 85% win rate claim is mathematically unrealistic. The real mechanical win rate is ~54.2% with a 1:2.5 Risk-to-Reward ratio."
+        summary: "The FVG mechanism tested across 7 diverse asset classes yields a 39.2% win rate in 1-year multi-asset and 54.2% over 5 years. While it yields positive net profit due to the 1:2 R:R ratio, the viral claim of an effortless high win rate is not supported by blind mechanical execution."
       },
       sample_trades: [
         { id: "#T-781", date: "2026-10-24", asset: "QQQ", type: "LONG", entry: 494.50, sl: 489.20, tp: 507.75, exit: 507.75, status: "WIN", pnl: "+$1,325.00", balance: "$28,460.00" },
