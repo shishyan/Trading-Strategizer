@@ -212,6 +212,7 @@ const TRADING_DATA = {
       claim_title: "#1 Most Viewed Trading Strategy Video — ICT Fair Value Gap Scalping",
       youtube_url: "https://www.youtube.com/watch?v=ZX-Tp4zgJYc",
       video_src: "videos/influenzian_watch_with_live_reaction_360p.mp4",
+      video_src_shorts: "videos/influenzian_remix_collab_shorts_360p.mp4",
       claimed_sample: "3.9M Views Viral FVG Scalping Demonstration",
       claimed_metrics: {
         win_rate: "80.0%+",

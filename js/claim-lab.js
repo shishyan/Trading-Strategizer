@@ -83,12 +83,25 @@ function renderActiveClaim(claimId) {
     <!-- Video Preview & Side-by-Side Analysis -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       
-      <!-- Video Player (360p Review Video) -->
-      <div class="bg-black rounded-xl overflow-hidden border border-[#1e293b] shadow-xl flex flex-col justify-between aspect-video">
-        <video controls class="w-full h-full object-cover">
-          <source src="${claim.video_src}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <!-- Video Player (360p Review Video with Shorts / Landscape Toggle) -->
+      <div class="bg-[#080c14] rounded-xl overflow-hidden border border-[#1e293b] shadow-xl p-3 flex flex-col space-y-3">
+        <div class="flex items-center justify-between text-xs font-mono">
+          <span class="text-slate-400 font-bold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            Video Player
+          </span>
+          <div class="flex items-center gap-1 bg-[#0d131f] p-1 rounded-lg border border-[#1e293b]">
+            <button onclick="switchVideoFormat('landscape', '${claim.video_src}')" id="btn-format-landscape" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white">16:9 Watch-With</button>
+            <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">9:16 Shorts Collab</button>
+          </div>
+        </div>
+        
+        <div class="relative bg-black rounded-lg overflow-hidden flex items-center justify-center min-h-[300px]" id="video-container-box">
+          <video id="claim-active-video" controls class="max-h-[360px] w-auto mx-auto object-contain">
+            <source src="${claim.video_src}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
 
       <!-- Side-by-Side Discrepancy Card -->
@@ -181,4 +194,23 @@ function renderActiveClaim(claimId) {
   `;
 
   if (window.lucide) lucide.createIcons();
+}
+
+function switchVideoFormat(format, src) {
+  const vid = document.getElementById('claim-active-video');
+  const btnLandscape = document.getElementById('btn-format-landscape');
+  const btnShorts = document.getElementById('btn-format-shorts');
+  if (!vid) return;
+
+  vid.src = src;
+  vid.load();
+  vid.play().catch(() => {});
+
+  if (format === 'shorts') {
+    btnShorts.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
+    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
+  } else {
+    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
+    btnShorts.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
+  }
 }
