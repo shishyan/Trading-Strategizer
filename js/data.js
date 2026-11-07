@@ -211,7 +211,7 @@ const TRADING_DATA = {
       influencer_name: "@TradeIQ / @TheMovingAverage",
       claim_title: "The #1 ICT Fair Value Gap Scalping Strategy (85% Win Rate Claim)",
       youtube_url: "https://www.youtube.com/watch?v=3Os-VVyjPQc",
-      video_src: "videos/influenzian_pilot_360p_review.mp4",
+      video_src: "videos/influenzian_watch_with_live_reaction_360p.mp4",
       claimed_sample: "30 cherry-picked setups shown on YouTube",
       claimed_metrics: {
         win_rate: "85.0%",
