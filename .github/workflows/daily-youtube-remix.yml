@@ -1,0 +1,70 @@
+name: Daily YouTube Strategy Audit Pipeline (@influenzian)
+
+on:
+  schedule:
+    # Runs twice daily at 06:00 UTC and 18:00 UTC (processes batches up to daily quota limit)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:
+    inputs:
+      batch_limit:
+        description: 'Number of videos to generate and upload (max 10)'
+        required: true
+        default: '5'
+      render_mode:
+        description: 'Render resolution (1080p or 360p)'
+        required: true
+        default: '1080p'
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Trading-Strategizer
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install System Dependencies (FFmpeg & Node)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg nodejs npm
+          pip install --upgrade pip
+          pip install google-api-python-client google-auth-oauthlib google-auth-httplib2 gTTS pillow yt-dlp yfinance pandas numpy
+
+      - name: Discover Top Trending Trading Videos
+        run: |
+          echo "Scanning YouTube for high-engagement viral trading strategy videos..."
+          python3 -m yt_dlp --no-check-certificate --dump-json "ytsearch15:trading strategy" | jq -r '[.title, .view_count, .like_count, .id, .uploader] | @tsv' > /tmp/trending_videos.tsv
+          head -n 10 /tmp/trending_videos.tsv
+
+      - name: Run Multi-Asset Empirical Backtests & Render 60s Remixed Audits
+        run: |
+          echo "Executing automated quantitative testing and video rendering..."
+          # Generates up to batch_limit videos with timed 10s non-blocking HUD overlays
+          python3 scripts/automated_batch_pipeline.py --limit ${{ github.event.inputs.batch_limit || 5 }} --mode ${{ github.event.inputs.render_mode || '1080p' }}
+
+      - name: Upload Videos to @influenzian Channel
+        env:
+          YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
+        run: |
+          if [ -z "$YOUTUBE_TOKEN_JSON" ]; then
+            echo "::warning ::YOUTUBE_TOKEN_JSON secret is not set. Skipping live upload step. Staging videos for manual upload."
+          else
+            echo "Uploading rendered batch to @influenzian via YouTube Data API v3..."
+            python3 scripts/upload_staged_batch.py
+          fi
+
+      - name: Commit Updated Leaderboard & Video Catalog to GitHub Pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/data.js videos/ data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(auto): update 5Y leaderboard and add new audited video claims [skip ci]" && git push origin main)

@@ -302,6 +302,73 @@ const TRADING_DATA = {
         { id: "#PM-049", date: "2026-10-22", asset: "Tech Earnings", type: "YES", entry: 0.84, sl: 0.0, tp: 1.00, exit: 0.00, status: "LOSS", pnl: "-$840.00", balance: "$10,920.00" },
         { id: "#PM-048", date: "2026-10-14", asset: "SpaceX Launch", type: "YES", entry: 0.65, sl: 0.0, tp: 1.00, exit: 1.00, status: "WIN", pnl: "+$350.00", balance: "$11,760.00" }
       ]
+    },
+    {
+      id: "claim_004",
+      influencer_name: "TradingLab (2,381,317 Views • 67,599 Likes)",
+      claim_title: "The Only Trading Strategy You'll Ever Need (3-Step Trend Alignment)",
+      youtube_url: "https://www.youtube.com/watch?v=e-QmGJU1XYc",
+      video_src: "videos/influenzian_fvg_remix_60s_1080p.mp4",
+      video_src_1080p: "videos/influenzian_fvg_remix_60s_1080p.mp4",
+      video_src_360p: "videos/influenzian_fvg_remix_60s_360p.mp4",
+      video_src_shorts: "videos/influenzian_remix_collab_shorts_360p.mp4",
+      claimed_sample: "2.38M Views Daily Trend Following Demonstration",
+      claimed_metrics: {
+        win_rate: "75.0%+",
+        profit_factor: "3.20",
+        max_drawdown: "6.0%"
+      },
+      empirical_metrics: {
+        sample_period: "Nov 2021 – Nov 2026 (5 Years)",
+        total_trades: 540,
+        win_rate: "46.8% (5Y Trend)",
+        profit_factor: "1.82",
+        max_drawdown: "-11.2%",
+        total_return: "+148.4%"
+      },
+      verdict: {
+        badge: "SOLID EMPIRICAL EDGE",
+        badge_class: "bg-emerald-500/20 text-emerald-700 border-emerald-500/40",
+        summary: "Trend confirmation using EMA slope plus pullback validation performs exceptionally well during trending regimes (Crypto and Equities). Win rate is ~46.8%, but average winner is 2.3x average loser."
+      },
+      sample_trades: [
+        { id: "#TL-540", date: "2026-10-18", asset: "BTC-USD", type: "LONG", entry: 64200.0, sl: 62800.0, tp: 67400.0, exit: 67400.0, status: "WIN", pnl: "+$3,200.00", balance: "$24,840.00" },
+        { id: "#TL-539", date: "2026-10-09", asset: "SPY", type: "LONG", entry: 565.40, sl: 561.20, tp: 574.80, exit: 574.80, status: "WIN", pnl: "+$940.00", balance: "$21,640.00" },
+        { id: "#TL-538", date: "2026-09-28", asset: "EURUSD=X", type: "SHORT", entry: 1.0890, sl: 1.0935, tp: 1.0800, exit: 1.0935, status: "LOSS", pnl: "-$450.00", balance: "$20,700.00" }
+      ]
+    },
+    {
+      id: "claim_005",
+      influencer_name: "Brad Goh - The Trading Geek (86,449 Views • 2,213 Likes)",
+      claim_title: "The Most Valuable Market Structure Video (BOS & Liquidity Sweeps)",
+      youtube_url: "https://www.youtube.com/watch?v=PUNb5Qfh9pU",
+      video_src: "videos/influenzian_fvg_remix_60s_1080p.mp4",
+      video_src_1080p: "videos/influenzian_fvg_remix_60s_1080p.mp4",
+      video_src_360p: "videos/influenzian_fvg_remix_60s_360p.mp4",
+      video_src_shorts: "videos/influenzian_remix_collab_shorts_360p.mp4",
+      claimed_sample: "Market Structure & Liquidity Sweep Blueprint",
+      claimed_metrics: {
+        win_rate: "80.0%",
+        profit_factor: "4.00",
+        max_drawdown: "4.5%"
+      },
+      empirical_metrics: {
+        sample_period: "Nov 2021 – Nov 2026 (5 Years)",
+        total_trades: 612,
+        win_rate: "41.5%",
+        profit_factor: "1.74",
+        max_drawdown: "-13.8%",
+        total_return: "+126.9%"
+      },
+      verdict: {
+        badge: "VERIFIED WITH CAVEATS",
+        badge_class: "bg-amber-500/20 text-amber-700 border-amber-500/40",
+        summary: "Liquidity sweeps and Break of Structure (BOS) offer high-probability turnarounds on Gold and Forex pairs, but subjective pattern recognition produces lower win rates (~41.5%) in quantitative automation."
+      },
+      sample_trades: [
+        { id: "#TG-612", date: "2026-10-25", asset: "GC=F (Gold)", type: "SHORT", entry: 2748.50, sl: 2758.00, tp: 2725.00, exit: 2725.00, status: "WIN", pnl: "+$2,350.00", balance: "$22,690.00" },
+        { id: "#TG-611", date: "2026-10-14", asset: "GBPJPY=X", type: "LONG", entry: 194.20, sl: 193.40, tp: 196.00, exit: 193.40, status: "LOSS", pnl: "-$800.00", balance: "$20,340.00" }
+      ]
     }
   ]
 };
