@@ -91,8 +91,9 @@ function renderActiveClaim(claimId) {
             Video Player
           </span>
           <div class="flex items-center gap-1 bg-[#0d131f] p-1 rounded-lg border border-[#1e293b]">
-            <button onclick="switchVideoFormat('landscape', '${claim.video_src}')" id="btn-format-landscape" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white">16:9 Watch-With</button>
-            <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">9:16 Shorts Collab</button>
+            <button onclick="switchVideoFormat('greenscreen', '${claim.video_src_greenscreen || claim.video_src}')" id="btn-format-greenscreen" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white">Green Screen Remix</button>
+            <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">9:16 Shorts</button>
+            <button onclick="switchVideoFormat('landscape', 'videos/influenzian_watch_with_live_reaction_360p.mp4')" id="btn-format-landscape" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">16:9 Split</button>
           </div>
         </div>
         
@@ -198,6 +199,7 @@ function renderActiveClaim(claimId) {
 
 function switchVideoFormat(format, src) {
   const vid = document.getElementById('claim-active-video');
+  const btnGreenScreen = document.getElementById('btn-format-greenscreen');
   const btnLandscape = document.getElementById('btn-format-landscape');
   const btnShorts = document.getElementById('btn-format-shorts');
   if (!vid) return;
@@ -206,11 +208,16 @@ function switchVideoFormat(format, src) {
   vid.load();
   vid.play().catch(() => {});
 
-  if (format === 'shorts') {
+  // Reset classes
+  [btnGreenScreen, btnLandscape, btnShorts].forEach(b => {
+    if (b) b.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
+  });
+
+  if (format === 'greenscreen' && btnGreenScreen) {
+    btnGreenScreen.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white";
+  } else if (format === 'shorts' && btnShorts) {
     btnShorts.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
-    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
-  } else {
-    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
-    btnShorts.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
+  } else if (format === 'landscape' && btnLandscape) {
+    btnLandscape.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600 text-white";
   }
 }
