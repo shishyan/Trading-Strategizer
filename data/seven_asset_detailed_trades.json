@@ -1,0 +1,1541 @@
+{
+  "GC=F": {
+    "name": "Gold Futures",
+    "category": "Commodities",
+    "benchmark": "XAU/USD",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 13,
+      "wins": 6,
+      "losses": 7,
+      "win_rate": 46.2,
+      "profit_factor": 1.68,
+      "initial_capital": 10000.0,
+      "final_capital": 10496.57,
+      "net_pnl": 496.57,
+      "return_pct": 5.0,
+      "max_drawdown": 2.0,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-26",
+        "direction": "LONG",
+        "entry_price": 4523.5,
+        "sl": 4389.0,
+        "tp": 4792.5,
+        "status": "LOSS",
+        "exit_date": "2025-12-29",
+        "exit_price": 4389.0,
+        "pnl": -100.0,
+        "balance_after": 9900.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2026-01-14",
+        "direction": "LONG",
+        "entry_price": 4594.2998,
+        "sl": 4489.2998,
+        "tp": 4804.2998,
+        "status": "WIN",
+        "exit_date": "2026-01-21",
+        "exit_price": 4804.2998,
+        "pnl": 198.0,
+        "balance_after": 10098.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-01-23",
+        "direction": "LONG",
+        "entry_price": 4940.0,
+        "sl": 4625.5,
+        "tp": 5569.0,
+        "status": "WIN",
+        "exit_date": "2026-01-29",
+        "exit_price": 5569.0,
+        "pnl": 201.96,
+        "balance_after": 10299.96
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-01-30",
+        "direction": "LONG",
+        "entry_price": 5410.0,
+        "sl": 5107.8999,
+        "tp": 6014.2002,
+        "status": "LOSS",
+        "exit_date": "2026-02-02",
+        "exit_price": 5107.8999,
+        "pnl": -103.0,
+        "balance_after": 10196.96
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-02-25",
+        "direction": "LONG",
+        "entry_price": 5160.0,
+        "sl": 5042.7998,
+        "tp": 5394.4004,
+        "status": "WIN",
+        "exit_date": "2026-03-02",
+        "exit_price": 5394.4004,
+        "pnl": 203.94,
+        "balance_after": 10400.9
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-03-24",
+        "direction": "SHORT",
+        "entry_price": 4414.7998,
+        "sl": 4809.2998,
+        "tp": 3625.7998,
+        "status": "LOSS",
+        "exit_date": "2026-04-01",
+        "exit_price": 4809.2998,
+        "pnl": -104.01,
+        "balance_after": 10296.89
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-04-06",
+        "direction": "LONG",
+        "entry_price": 4675.0,
+        "sl": 4579.1001,
+        "tp": 4866.7998,
+        "status": "WIN",
+        "exit_date": "2026-04-08",
+        "exit_price": 4866.7998,
+        "pnl": 205.94,
+        "balance_after": 10502.83
+      },
+      {
+        "trade_id": 8,
+        "entry_date": "2026-05-11",
+        "direction": "LONG",
+        "entry_price": 4690.0,
+        "sl": 4597.5,
+        "tp": 4875.0,
+        "status": "LOSS",
+        "exit_date": "2026-05-15",
+        "exit_price": 4597.5,
+        "pnl": -105.03,
+        "balance_after": 10397.8
+      },
+      {
+        "trade_id": 9,
+        "entry_date": "2026-05-20",
+        "direction": "SHORT",
+        "entry_price": 4486.6001,
+        "sl": 4649.2998,
+        "tp": 4161.2007,
+        "status": "WIN",
+        "exit_date": "2026-06-10",
+        "exit_price": 4161.2007,
+        "pnl": 207.96,
+        "balance_after": 10605.76
+      },
+      {
+        "trade_id": 10,
+        "entry_date": "2026-06-10",
+        "direction": "SHORT",
+        "entry_price": 4276.1001,
+        "sl": 4450.1001,
+        "tp": 3928.1001,
+        "status": "LOSS",
+        "exit_date": "2026-08-10",
+        "exit_price": 4450.1001,
+        "pnl": -106.06,
+        "balance_after": 10499.7
+      },
+      {
+        "trade_id": 11,
+        "entry_date": "2026-08-10",
+        "direction": "LONG",
+        "entry_price": 4400.0,
+        "sl": 4163.7998,
+        "tp": 4872.4004,
+        "status": "LOSS",
+        "exit_date": "2026-09-28",
+        "exit_price": 4163.7998,
+        "pnl": -105.0,
+        "balance_after": 10394.7
+      },
+      {
+        "trade_id": 12,
+        "entry_date": "2026-10-01",
+        "direction": "SHORT",
+        "entry_price": 4190.1001,
+        "sl": 4289.2002,
+        "tp": 3991.8999,
+        "status": "WIN",
+        "exit_date": "2026-10-23",
+        "exit_price": 3991.8999,
+        "pnl": 207.89,
+        "balance_after": 10602.6
+      },
+      {
+        "trade_id": 13,
+        "entry_date": "2026-10-27",
+        "direction": "SHORT",
+        "entry_price": 4032.8,
+        "sl": 4122.2998,
+        "tp": 3853.8005,
+        "status": "LOSS",
+        "exit_date": "2026-11-05",
+        "exit_price": 4122.2998,
+        "pnl": -106.03,
+        "balance_after": 10496.57
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-07",
+        "capital": 10000.0
+      },
+      {
+        "date": "2025-12-29",
+        "capital": 9900.0
+      },
+      {
+        "date": "2026-01-21",
+        "capital": 10098.0
+      },
+      {
+        "date": "2026-01-29",
+        "capital": 10299.96
+      },
+      {
+        "date": "2026-02-02",
+        "capital": 10196.96
+      },
+      {
+        "date": "2026-03-02",
+        "capital": 10400.9
+      },
+      {
+        "date": "2026-04-01",
+        "capital": 10296.89
+      },
+      {
+        "date": "2026-04-08",
+        "capital": 10502.83
+      },
+      {
+        "date": "2026-05-15",
+        "capital": 10397.8
+      },
+      {
+        "date": "2026-06-10",
+        "capital": 10605.76
+      },
+      {
+        "date": "2026-08-10",
+        "capital": 10499.7
+      },
+      {
+        "date": "2026-09-28",
+        "capital": 10394.7
+      },
+      {
+        "date": "2026-10-23",
+        "capital": 10602.6
+      },
+      {
+        "date": "2026-11-05",
+        "capital": 10496.57
+      }
+    ]
+  },
+  "CL=F": {
+    "name": "Crude Oil (WTI)",
+    "category": "Commodities",
+    "benchmark": "Energy",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 13,
+      "wins": 5,
+      "losses": 8,
+      "win_rate": 38.5,
+      "profit_factor": 1.23,
+      "initial_capital": 10000.0,
+      "final_capital": 10187.85,
+      "net_pnl": 187.85,
+      "return_pct": 1.9,
+      "max_drawdown": 3.9,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-18",
+        "direction": "SHORT",
+        "entry_price": 56.9,
+        "sl": 57.15,
+        "tp": 56.4,
+        "status": "WIN",
+        "exit_date": "2025-12-19",
+        "exit_price": 56.4,
+        "pnl": 200.0,
+        "balance_after": 10200.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2026-02-02",
+        "direction": "LONG",
+        "entry_price": 64.72,
+        "sl": 62.63,
+        "tp": 68.9,
+        "status": "LOSS",
+        "exit_date": "2026-02-03",
+        "exit_price": 62.63,
+        "pnl": -102.0,
+        "balance_after": 10098.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-02-23",
+        "direction": "LONG",
+        "entry_price": 65.89,
+        "sl": 64.14,
+        "tp": 69.39,
+        "status": "LOSS",
+        "exit_date": "2026-02-26",
+        "exit_price": 64.14,
+        "pnl": -100.98,
+        "balance_after": 9997.02
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-03-04",
+        "direction": "LONG",
+        "entry_price": 74.74,
+        "sl": 66.71,
+        "tp": 90.8,
+        "status": "WIN",
+        "exit_date": "2026-03-06",
+        "exit_price": 90.8,
+        "pnl": 199.94,
+        "balance_after": 10196.96
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-03-17",
+        "direction": "LONG",
+        "entry_price": 94.41,
+        "sl": 88.99,
+        "tp": 105.25,
+        "status": "LOSS",
+        "exit_date": "2026-03-23",
+        "exit_price": 88.99,
+        "pnl": -101.97,
+        "balance_after": 10094.99
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-04-01",
+        "direction": "LONG",
+        "entry_price": 101.72,
+        "sl": 95.44,
+        "tp": 114.28,
+        "status": "WIN",
+        "exit_date": "2026-04-06",
+        "exit_price": 114.28,
+        "pnl": 201.9,
+        "balance_after": 10296.89
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-04-08",
+        "direction": "LONG",
+        "entry_price": 108.74,
+        "sl": 103.31,
+        "tp": 119.6,
+        "status": "LOSS",
+        "exit_date": "2026-04-09",
+        "exit_price": 103.31,
+        "pnl": -102.97,
+        "balance_after": 10193.92
+      },
+      {
+        "trade_id": 8,
+        "entry_date": "2026-06-17",
+        "direction": "SHORT",
+        "entry_price": 76.59,
+        "sl": 85.74,
+        "tp": 58.29,
+        "status": "LOSS",
+        "exit_date": "2026-07-21",
+        "exit_price": 85.74,
+        "pnl": -101.94,
+        "balance_after": 10091.98
+      },
+      {
+        "trade_id": 9,
+        "entry_date": "2026-07-27",
+        "direction": "LONG",
+        "entry_price": 86.12,
+        "sl": 85.8,
+        "tp": 86.76,
+        "status": "LOSS",
+        "exit_date": "2026-07-28",
+        "exit_price": 85.8,
+        "pnl": -100.92,
+        "balance_after": 9991.06
+      },
+      {
+        "trade_id": 10,
+        "entry_date": "2026-08-05",
+        "direction": "SHORT",
+        "entry_price": 75.17,
+        "sl": 82.97,
+        "tp": 59.57,
+        "status": "LOSS",
+        "exit_date": "2026-08-11",
+        "exit_price": 82.97,
+        "pnl": -99.91,
+        "balance_after": 9891.15
+      },
+      {
+        "trade_id": 11,
+        "entry_date": "2026-08-13",
+        "direction": "LONG",
+        "entry_price": 82.7,
+        "sl": 78.77,
+        "tp": 90.56,
+        "status": "WIN",
+        "exit_date": "2026-09-01",
+        "exit_price": 90.56,
+        "pnl": 197.82,
+        "balance_after": 10088.98
+      },
+      {
+        "trade_id": 12,
+        "entry_date": "2026-09-03",
+        "direction": "LONG",
+        "entry_price": 90.7,
+        "sl": 83.78,
+        "tp": 104.54,
+        "status": "WIN",
+        "exit_date": "2026-09-14",
+        "exit_price": 104.54,
+        "pnl": 201.78,
+        "balance_after": 10290.75
+      },
+      {
+        "trade_id": 13,
+        "entry_date": "2026-09-15",
+        "direction": "LONG",
+        "entry_price": 102.01,
+        "sl": 96.93,
+        "tp": 112.17,
+        "status": "LOSS",
+        "exit_date": "2026-09-21",
+        "exit_price": 96.93,
+        "pnl": -102.91,
+        "balance_after": 10187.85
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-07",
+        "capital": 10000.0
+      },
+      {
+        "date": "2025-12-19",
+        "capital": 10200.0
+      },
+      {
+        "date": "2026-02-03",
+        "capital": 10098.0
+      },
+      {
+        "date": "2026-02-26",
+        "capital": 9997.02
+      },
+      {
+        "date": "2026-03-06",
+        "capital": 10196.96
+      },
+      {
+        "date": "2026-03-23",
+        "capital": 10094.99
+      },
+      {
+        "date": "2026-04-06",
+        "capital": 10296.89
+      },
+      {
+        "date": "2026-04-09",
+        "capital": 10193.92
+      },
+      {
+        "date": "2026-07-21",
+        "capital": 10091.98
+      },
+      {
+        "date": "2026-07-28",
+        "capital": 9991.06
+      },
+      {
+        "date": "2026-08-11",
+        "capital": 9891.15
+      },
+      {
+        "date": "2026-09-01",
+        "capital": 10088.98
+      },
+      {
+        "date": "2026-09-14",
+        "capital": 10290.75
+      },
+      {
+        "date": "2026-09-21",
+        "capital": 10187.85
+      }
+    ]
+  },
+  "SPY": {
+    "name": "S&P 500 ETF",
+    "category": "Equities Index",
+    "benchmark": "US Large Cap",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 13,
+      "wins": 4,
+      "losses": 9,
+      "win_rate": 30.8,
+      "profit_factor": 0.88,
+      "initial_capital": 10000.0,
+      "final_capital": 9888.2,
+      "net_pnl": -111.8,
+      "return_pct": -1.1,
+      "max_drawdown": 4.9,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-26",
+        "direction": "LONG",
+        "entry_price": 685.2874,
+        "sl": 675.8115,
+        "tp": 704.2393,
+        "status": "LOSS",
+        "exit_date": "2026-01-02",
+        "exit_price": 675.8115,
+        "pnl": -100.0,
+        "balance_after": 9900.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2026-01-26",
+        "direction": "LONG",
+        "entry_price": 685.1386,
+        "sl": 679.463,
+        "tp": 696.4898,
+        "status": "LOSS",
+        "exit_date": "2026-02-03",
+        "exit_price": 679.463,
+        "pnl": -99.0,
+        "balance_after": 9801.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-02-11",
+        "direction": "LONG",
+        "entry_price": 690.9929,
+        "sl": 678.3913,
+        "tp": 716.196,
+        "status": "LOSS",
+        "exit_date": "2026-02-12",
+        "exit_price": 678.3913,
+        "pnl": -98.01,
+        "balance_after": 9702.99
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-03-16",
+        "direction": "SHORT",
+        "entry_price": 663.2,
+        "sl": 669.5305,
+        "tp": 650.539,
+        "status": "WIN",
+        "exit_date": "2026-03-19",
+        "exit_price": 650.539,
+        "pnl": 194.06,
+        "balance_after": 9897.05
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-03-23",
+        "direction": "SHORT",
+        "entry_price": 654.7531,
+        "sl": 664.5097,
+        "tp": 635.2399,
+        "status": "WIN",
+        "exit_date": "2026-03-27",
+        "exit_price": 635.2399,
+        "pnl": 197.94,
+        "balance_after": 10094.99
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-03-31",
+        "direction": "SHORT",
+        "entry_price": 635.7196,
+        "sl": 650.9424,
+        "tp": 605.2738,
+        "status": "LOSS",
+        "exit_date": "2026-04-01",
+        "exit_price": 650.9424,
+        "pnl": -100.95,
+        "balance_after": 9994.04
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-04-10",
+        "direction": "LONG",
+        "entry_price": 677.8859,
+        "sl": 656.3948,
+        "tp": 720.8683,
+        "status": "WIN",
+        "exit_date": "2026-05-01",
+        "exit_price": 720.8683,
+        "pnl": 199.88,
+        "balance_after": 10193.92
+      },
+      {
+        "trade_id": 8,
+        "entry_date": "2026-05-05",
+        "direction": "LONG",
+        "entry_price": 718.1321,
+        "sl": 708.6103,
+        "tp": 737.1757,
+        "status": "WIN",
+        "exit_date": "2026-05-13",
+        "exit_price": 737.1757,
+        "pnl": 203.88,
+        "balance_after": 10397.8
+      },
+      {
+        "trade_id": 9,
+        "entry_date": "2026-05-18",
+        "direction": "LONG",
+        "entry_price": 736.101,
+        "sl": 735.1161,
+        "tp": 738.071,
+        "status": "LOSS",
+        "exit_date": "2026-05-19",
+        "exit_price": 735.1161,
+        "pnl": -103.98,
+        "balance_after": 10293.82
+      },
+      {
+        "trade_id": 10,
+        "entry_date": "2026-05-27",
+        "direction": "LONG",
+        "entry_price": 747.0953,
+        "sl": 738.1307,
+        "tp": 765.0244,
+        "status": "LOSS",
+        "exit_date": "2026-06-05",
+        "exit_price": 738.1307,
+        "pnl": -102.94,
+        "balance_after": 10190.88
+      },
+      {
+        "trade_id": 11,
+        "entry_date": "2026-06-17",
+        "direction": "LONG",
+        "entry_price": 747.5032,
+        "sl": 736.2702,
+        "tp": 769.9693,
+        "status": "LOSS",
+        "exit_date": "2026-06-23",
+        "exit_price": 736.2702,
+        "pnl": -101.91,
+        "balance_after": 10088.98
+      },
+      {
+        "trade_id": 12,
+        "entry_date": "2026-07-02",
+        "direction": "LONG",
+        "entry_price": 745.5487,
+        "sl": 734.7056,
+        "tp": 767.2348,
+        "status": "LOSS",
+        "exit_date": "2026-07-23",
+        "exit_price": 734.7056,
+        "pnl": -100.89,
+        "balance_after": 9988.09
+      },
+      {
+        "trade_id": 13,
+        "entry_date": "2026-08-05",
+        "direction": "LONG",
+        "entry_price": 773.9282,
+        "sl": 740.6109,
+        "tp": 840.5627,
+        "status": "LOSS",
+        "exit_date": "2026-11-05",
+        "exit_price": 740.6109,
+        "pnl": -99.88,
+        "balance_after": 9888.2
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-07",
+        "capital": 10000.0
+      },
+      {
+        "date": "2026-01-02",
+        "capital": 9900.0
+      },
+      {
+        "date": "2026-02-03",
+        "capital": 9801.0
+      },
+      {
+        "date": "2026-02-12",
+        "capital": 9702.99
+      },
+      {
+        "date": "2026-03-19",
+        "capital": 9897.05
+      },
+      {
+        "date": "2026-03-27",
+        "capital": 10094.99
+      },
+      {
+        "date": "2026-04-01",
+        "capital": 9994.04
+      },
+      {
+        "date": "2026-05-01",
+        "capital": 10193.92
+      },
+      {
+        "date": "2026-05-13",
+        "capital": 10397.8
+      },
+      {
+        "date": "2026-05-19",
+        "capital": 10293.82
+      },
+      {
+        "date": "2026-06-05",
+        "capital": 10190.88
+      },
+      {
+        "date": "2026-06-23",
+        "capital": 10088.98
+      },
+      {
+        "date": "2026-07-23",
+        "capital": 9988.09
+      },
+      {
+        "date": "2026-11-05",
+        "capital": 9888.2
+      }
+    ]
+  },
+  "EURUSD=X": {
+    "name": "EUR/USD",
+    "category": "Forex Major",
+    "benchmark": "G10 Currencies",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 13,
+      "wins": 4,
+      "losses": 9,
+      "win_rate": 30.8,
+      "profit_factor": 0.87,
+      "initial_capital": 10000.0,
+      "final_capital": 9888.2,
+      "net_pnl": -111.8,
+      "return_pct": -1.1,
+      "max_drawdown": 4.0,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-08",
+        "direction": "LONG",
+        "entry_price": 1.1641,
+        "sl": 1.1624,
+        "tp": 1.1676,
+        "status": "LOSS",
+        "exit_date": "2025-12-09",
+        "exit_price": 1.1624,
+        "pnl": -100.0,
+        "balance_after": 9900.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2025-12-15",
+        "direction": "LONG",
+        "entry_price": 1.1738,
+        "sl": 1.1657,
+        "tp": 1.1899,
+        "status": "LOSS",
+        "exit_date": "2026-01-08",
+        "exit_price": 1.1657,
+        "pnl": -99.0,
+        "balance_after": 9801.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-01-23",
+        "direction": "LONG",
+        "entry_price": 1.1754,
+        "sl": 1.165,
+        "tp": 1.1963,
+        "status": "WIN",
+        "exit_date": "2026-01-27",
+        "exit_price": 1.1963,
+        "pnl": 196.02,
+        "balance_after": 9997.02
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-01-28",
+        "direction": "LONG",
+        "entry_price": 1.2023,
+        "sl": 1.1751,
+        "tp": 1.2567,
+        "status": "LOSS",
+        "exit_date": "2026-02-19",
+        "exit_price": 1.1751,
+        "pnl": -99.97,
+        "balance_after": 9897.05
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-03-05",
+        "direction": "SHORT",
+        "entry_price": 1.1635,
+        "sl": 1.1791,
+        "tp": 1.1325,
+        "status": "LOSS",
+        "exit_date": "2026-04-14",
+        "exit_price": 1.1791,
+        "pnl": -98.97,
+        "balance_after": 9798.08
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-04-17",
+        "direction": "LONG",
+        "entry_price": 1.1779,
+        "sl": 1.1719,
+        "tp": 1.1898,
+        "status": "LOSS",
+        "exit_date": "2026-04-22",
+        "exit_price": 1.1719,
+        "pnl": -97.98,
+        "balance_after": 9700.1
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-05-11",
+        "direction": "LONG",
+        "entry_price": 1.1769,
+        "sl": 1.1716,
+        "tp": 1.1874,
+        "status": "LOSS",
+        "exit_date": "2026-05-13",
+        "exit_price": 1.1716,
+        "pnl": -97.0,
+        "balance_after": 9603.1
+      },
+      {
+        "trade_id": 8,
+        "entry_date": "2026-05-19",
+        "direction": "SHORT",
+        "entry_price": 1.1654,
+        "sl": 1.1696,
+        "tp": 1.157,
+        "status": "WIN",
+        "exit_date": "2026-06-05",
+        "exit_price": 1.157,
+        "pnl": 192.06,
+        "balance_after": 9795.16
+      },
+      {
+        "trade_id": 9,
+        "entry_date": "2026-06-10",
+        "direction": "SHORT",
+        "entry_price": 1.1535,
+        "sl": 1.1599,
+        "tp": 1.1408,
+        "status": "LOSS",
+        "exit_date": "2026-06-15",
+        "exit_price": 1.1599,
+        "pnl": -97.95,
+        "balance_after": 9697.21
+      },
+      {
+        "trade_id": 10,
+        "entry_date": "2026-06-22",
+        "direction": "SHORT",
+        "entry_price": 1.1464,
+        "sl": 1.1575,
+        "tp": 1.124,
+        "status": "LOSS",
+        "exit_date": "2026-08-07",
+        "exit_price": 1.1575,
+        "pnl": -96.97,
+        "balance_after": 9600.24
+      },
+      {
+        "trade_id": 11,
+        "entry_date": "2026-08-19",
+        "direction": "LONG",
+        "entry_price": 1.1577,
+        "sl": 1.1547,
+        "tp": 1.1636,
+        "status": "WIN",
+        "exit_date": "2026-08-20",
+        "exit_price": 1.1636,
+        "pnl": 192.0,
+        "balance_after": 9792.24
+      },
+      {
+        "trade_id": 12,
+        "entry_date": "2026-08-24",
+        "direction": "LONG",
+        "entry_price": 1.1685,
+        "sl": 1.1589,
+        "tp": 1.1877,
+        "status": "LOSS",
+        "exit_date": "2026-08-31",
+        "exit_price": 1.1589,
+        "pnl": -97.92,
+        "balance_after": 9694.32
+      },
+      {
+        "trade_id": 13,
+        "entry_date": "2026-09-17",
+        "direction": "SHORT",
+        "entry_price": 1.1468,
+        "sl": 1.1572,
+        "tp": 1.1261,
+        "status": "WIN",
+        "exit_date": "2026-10-01",
+        "exit_price": 1.1261,
+        "pnl": 193.89,
+        "balance_after": 9888.2
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-06",
+        "capital": 10000.0
+      },
+      {
+        "date": "2025-12-09",
+        "capital": 9900.0
+      },
+      {
+        "date": "2026-01-08",
+        "capital": 9801.0
+      },
+      {
+        "date": "2026-01-27",
+        "capital": 9997.02
+      },
+      {
+        "date": "2026-02-19",
+        "capital": 9897.05
+      },
+      {
+        "date": "2026-04-14",
+        "capital": 9798.08
+      },
+      {
+        "date": "2026-04-22",
+        "capital": 9700.1
+      },
+      {
+        "date": "2026-05-13",
+        "capital": 9603.1
+      },
+      {
+        "date": "2026-06-05",
+        "capital": 9795.16
+      },
+      {
+        "date": "2026-06-15",
+        "capital": 9697.21
+      },
+      {
+        "date": "2026-08-07",
+        "capital": 9600.24
+      },
+      {
+        "date": "2026-08-20",
+        "capital": 9792.24
+      },
+      {
+        "date": "2026-08-31",
+        "capital": 9694.32
+      },
+      {
+        "date": "2026-10-01",
+        "capital": 9888.2
+      }
+    ]
+  },
+  "GBPJPY=X": {
+    "name": "GBP/JPY",
+    "category": "Forex Cross",
+    "benchmark": "High Vol Forex",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 7,
+      "wins": 2,
+      "losses": 5,
+      "win_rate": 28.6,
+      "profit_factor": 0.79,
+      "initial_capital": 10000.0,
+      "final_capital": 9894.1,
+      "net_pnl": -105.9,
+      "return_pct": -1.1,
+      "max_drawdown": 2.0,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-12",
+        "direction": "LONG",
+        "entry_price": 208.231,
+        "sl": 207.714,
+        "tp": 209.265,
+        "status": "LOSS",
+        "exit_date": "2025-12-15",
+        "exit_price": 207.714,
+        "pnl": -100.0,
+        "balance_after": 9900.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2025-12-24",
+        "direction": "LONG",
+        "entry_price": 210.926,
+        "sl": 208.963,
+        "tp": 214.852,
+        "status": "WIN",
+        "exit_date": "2026-02-04",
+        "exit_price": 214.852,
+        "pnl": 198.0,
+        "balance_after": 10098.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-02-27",
+        "direction": "LONG",
+        "entry_price": 210.284,
+        "sl": 209.212,
+        "tp": 212.428,
+        "status": "LOSS",
+        "exit_date": "2026-03-05",
+        "exit_price": 209.212,
+        "pnl": -100.98,
+        "balance_after": 9997.02
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-04-10",
+        "direction": "LONG",
+        "entry_price": 213.637,
+        "sl": 211.528,
+        "tp": 217.855,
+        "status": "LOSS",
+        "exit_date": "2026-04-30",
+        "exit_price": 211.528,
+        "pnl": -99.97,
+        "balance_after": 9897.05
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-05-21",
+        "direction": "LONG",
+        "entry_price": 213.441,
+        "sl": 212.079,
+        "tp": 216.165,
+        "status": "WIN",
+        "exit_date": "2026-07-06",
+        "exit_price": 216.165,
+        "pnl": 197.94,
+        "balance_after": 10094.99
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-07-09",
+        "direction": "LONG",
+        "entry_price": 217.632,
+        "sl": 215.456,
+        "tp": 221.984,
+        "status": "LOSS",
+        "exit_date": "2026-07-30",
+        "exit_price": 215.456,
+        "pnl": -100.95,
+        "balance_after": 9994.04
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-08-13",
+        "direction": "LONG",
+        "entry_price": 215.052,
+        "sl": 213.243,
+        "tp": 218.67,
+        "status": "LOSS",
+        "exit_date": "2026-09-03",
+        "exit_price": 213.243,
+        "pnl": -99.94,
+        "balance_after": 9894.1
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-06",
+        "capital": 10000.0
+      },
+      {
+        "date": "2025-12-15",
+        "capital": 9900.0
+      },
+      {
+        "date": "2026-02-04",
+        "capital": 10098.0
+      },
+      {
+        "date": "2026-03-05",
+        "capital": 9997.02
+      },
+      {
+        "date": "2026-04-30",
+        "capital": 9897.05
+      },
+      {
+        "date": "2026-07-06",
+        "capital": 10094.99
+      },
+      {
+        "date": "2026-07-30",
+        "capital": 9994.04
+      },
+      {
+        "date": "2026-09-03",
+        "capital": 9894.1
+      }
+    ]
+  },
+  "BTC-USD": {
+    "name": "Bitcoin",
+    "category": "Crypto",
+    "benchmark": "Digital Assets",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 50.0,
+      "profit_factor": 1.95,
+      "initial_capital": 10000.0,
+      "final_capital": 10296.89,
+      "net_pnl": 296.89,
+      "return_pct": 3.0,
+      "max_drawdown": 2.0,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2026-01-21",
+        "direction": "SHORT",
+        "entry_price": 88326.5078,
+        "sl": 95005.6172,
+        "tp": 74968.2891,
+        "status": "WIN",
+        "exit_date": "2026-02-02",
+        "exit_price": 74968.2891,
+        "pnl": 200.0,
+        "balance_after": 10200.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2026-02-03",
+        "direction": "SHORT",
+        "entry_price": 78693.5078,
+        "sl": 81071.4766,
+        "tp": 73937.5703,
+        "status": "WIN",
+        "exit_date": "2026-02-04",
+        "exit_price": 73937.5703,
+        "pnl": 204.0,
+        "balance_after": 10404.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-03-09",
+        "direction": "SHORT",
+        "entry_price": 65969.5859,
+        "sl": 70654.8828,
+        "tp": 56598.9922,
+        "status": "LOSS",
+        "exit_date": "2026-03-10",
+        "exit_price": 70654.8828,
+        "pnl": -104.04,
+        "balance_after": 10299.96
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-03-21",
+        "direction": "SHORT",
+        "entry_price": 70522.4688,
+        "sl": 73444.2266,
+        "tp": 64678.9531,
+        "status": "LOSS",
+        "exit_date": "2026-04-11",
+        "exit_price": 73444.2266,
+        "pnl": -103.0,
+        "balance_after": 10196.96
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-05-29",
+        "direction": "SHORT",
+        "entry_price": 73537.0312,
+        "sl": 76833.0391,
+        "tp": 66945.0156,
+        "status": "WIN",
+        "exit_date": "2026-06-02",
+        "exit_price": 66945.0156,
+        "pnl": 203.94,
+        "balance_after": 10400.9
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-06-04",
+        "direction": "SHORT",
+        "entry_price": 64020.0703,
+        "sl": 73315.0156,
+        "tp": 45430.1797,
+        "status": "LOSS",
+        "exit_date": "2026-08-20",
+        "exit_price": 73315.0156,
+        "pnl": -104.01,
+        "balance_after": 10296.89
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-07",
+        "capital": 10000.0
+      },
+      {
+        "date": "2026-02-02",
+        "capital": 10200.0
+      },
+      {
+        "date": "2026-02-04",
+        "capital": 10404.0
+      },
+      {
+        "date": "2026-03-10",
+        "capital": 10299.96
+      },
+      {
+        "date": "2026-04-11",
+        "capital": 10196.96
+      },
+      {
+        "date": "2026-06-02",
+        "capital": 10400.9
+      },
+      {
+        "date": "2026-08-20",
+        "capital": 10296.89
+      }
+    ]
+  },
+  "^TNX": {
+    "name": "10-Year US Treasury Yield",
+    "category": "Rates / Bonds",
+    "benchmark": "Fixed Income",
+    "period_tested": "Nov 2025 \u2013 Nov 2026 (1 Year)",
+    "capital_type": "Simulated Paper Capital ($10,000 USD)",
+    "summary": {
+      "trades_executed": 14,
+      "wins": 7,
+      "losses": 7,
+      "win_rate": 50.0,
+      "profit_factor": 2.03,
+      "initial_capital": 10000.0,
+      "final_capital": 10706.5,
+      "net_pnl": 706.5,
+      "return_pct": 7.1,
+      "max_drawdown": 4.9,
+      "rr_ratio": "1:2.0"
+    },
+    "trades": [
+      {
+        "trade_id": 1,
+        "entry_date": "2025-12-10",
+        "direction": "LONG",
+        "entry_price": 4.202,
+        "sl": 4.11,
+        "tp": 4.386,
+        "status": "LOSS",
+        "exit_date": "2025-12-11",
+        "exit_price": 4.11,
+        "pnl": -100.0,
+        "balance_after": 9900.0
+      },
+      {
+        "trade_id": 2,
+        "entry_date": "2025-12-24",
+        "direction": "LONG",
+        "entry_price": 4.167,
+        "sl": 4.137,
+        "tp": 4.227,
+        "status": "LOSS",
+        "exit_date": "2025-12-26",
+        "exit_price": 4.137,
+        "pnl": -99.0,
+        "balance_after": 9801.0
+      },
+      {
+        "trade_id": 3,
+        "entry_date": "2026-01-06",
+        "direction": "LONG",
+        "entry_price": 4.173,
+        "sl": 4.141,
+        "tp": 4.237,
+        "status": "LOSS",
+        "exit_date": "2026-01-07",
+        "exit_price": 4.141,
+        "pnl": -98.01,
+        "balance_after": 9702.99
+      },
+      {
+        "trade_id": 4,
+        "entry_date": "2026-01-22",
+        "direction": "LONG",
+        "entry_price": 4.259,
+        "sl": 4.164,
+        "tp": 4.449,
+        "status": "LOSS",
+        "exit_date": "2026-02-10",
+        "exit_price": 4.164,
+        "pnl": -97.03,
+        "balance_after": 9605.96
+      },
+      {
+        "trade_id": 5,
+        "entry_date": "2026-02-18",
+        "direction": "SHORT",
+        "entry_price": 4.064,
+        "sl": 4.125,
+        "tp": 3.942,
+        "status": "LOSS",
+        "exit_date": "2026-03-05",
+        "exit_price": 4.125,
+        "pnl": -96.06,
+        "balance_after": 9509.9
+      },
+      {
+        "trade_id": 6,
+        "entry_date": "2026-03-10",
+        "direction": "LONG",
+        "entry_price": 4.132,
+        "sl": 4.088,
+        "tp": 4.22,
+        "status": "WIN",
+        "exit_date": "2026-03-11",
+        "exit_price": 4.22,
+        "pnl": 190.2,
+        "balance_after": 9700.1
+      },
+      {
+        "trade_id": 7,
+        "entry_date": "2026-03-16",
+        "direction": "LONG",
+        "entry_price": 4.236,
+        "sl": 4.154,
+        "tp": 4.4,
+        "status": "WIN",
+        "exit_date": "2026-03-24",
+        "exit_price": 4.4,
+        "pnl": 194.0,
+        "balance_after": 9894.1
+      },
+      {
+        "trade_id": 8,
+        "entry_date": "2026-03-24",
+        "direction": "LONG",
+        "entry_price": 4.376,
+        "sl": 4.259,
+        "tp": 4.61,
+        "status": "LOSS",
+        "exit_date": "2026-04-08",
+        "exit_price": 4.259,
+        "pnl": -98.94,
+        "balance_after": 9795.16
+      },
+      {
+        "trade_id": 9,
+        "entry_date": "2026-05-14",
+        "direction": "LONG",
+        "entry_price": 4.439,
+        "sl": 4.388,
+        "tp": 4.541,
+        "status": "WIN",
+        "exit_date": "2026-05-15",
+        "exit_price": 4.541,
+        "pnl": 195.9,
+        "balance_after": 9991.06
+      },
+      {
+        "trade_id": 10,
+        "entry_date": "2026-05-15",
+        "direction": "LONG",
+        "entry_price": 4.548,
+        "sl": 4.41,
+        "tp": 4.824,
+        "status": "LOSS",
+        "exit_date": "2026-06-24",
+        "exit_price": 4.41,
+        "pnl": -99.91,
+        "balance_after": 9891.15
+      },
+      {
+        "trade_id": 11,
+        "entry_date": "2026-07-06",
+        "direction": "LONG",
+        "entry_price": 4.457,
+        "sl": 4.39,
+        "tp": 4.591,
+        "status": "WIN",
+        "exit_date": "2026-07-08",
+        "exit_price": 4.591,
+        "pnl": 197.82,
+        "balance_after": 10088.98
+      },
+      {
+        "trade_id": 12,
+        "entry_date": "2026-07-10",
+        "direction": "LONG",
+        "entry_price": 4.541,
+        "sl": 4.491,
+        "tp": 4.641,
+        "status": "WIN",
+        "exit_date": "2026-07-22",
+        "exit_price": 4.641,
+        "pnl": 201.78,
+        "balance_after": 10290.75
+      },
+      {
+        "trade_id": 13,
+        "entry_date": "2026-07-23",
+        "direction": "LONG",
+        "entry_price": 4.699,
+        "sl": 4.55,
+        "tp": 4.997,
+        "status": "WIN",
+        "exit_date": "2026-09-14",
+        "exit_price": 4.997,
+        "pnl": 205.82,
+        "balance_after": 10496.57
+      },
+      {
+        "trade_id": 14,
+        "entry_date": "2026-09-14",
+        "direction": "LONG",
+        "entry_price": 4.979,
+        "sl": 4.812,
+        "tp": 5.313,
+        "status": "WIN",
+        "exit_date": "2026-10-01",
+        "exit_price": 5.313,
+        "pnl": 209.93,
+        "balance_after": 10706.5
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2025-11-06",
+        "capital": 10000.0
+      },
+      {
+        "date": "2025-12-11",
+        "capital": 9900.0
+      },
+      {
+        "date": "2025-12-26",
+        "capital": 9801.0
+      },
+      {
+        "date": "2026-01-07",
+        "capital": 9702.99
+      },
+      {
+        "date": "2026-02-10",
+        "capital": 9605.96
+      },
+      {
+        "date": "2026-03-05",
+        "capital": 9509.9
+      },
+      {
+        "date": "2026-03-11",
+        "capital": 9700.1
+      },
+      {
+        "date": "2026-03-24",
+        "capital": 9894.1
+      },
+      {
+        "date": "2026-04-08",
+        "capital": 9795.16
+      },
+      {
+        "date": "2026-05-15",
+        "capital": 9991.06
+      },
+      {
+        "date": "2026-06-24",
+        "capital": 9891.15
+      },
+      {
+        "date": "2026-07-08",
+        "capital": 10088.98
+      },
+      {
+        "date": "2026-07-22",
+        "capital": 10290.75
+      },
+      {
+        "date": "2026-09-14",
+        "capital": 10496.57
+      },
+      {
+        "date": "2026-10-01",
+        "capital": 10706.5
+      }
+    ]
+  }
+}

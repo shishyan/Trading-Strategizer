@@ -1,0 +1,100 @@
+{
+  "project": "Trading Strategizer",
+  "version": "1.0.0",
+  "description": "Multi-strategy, multi-asset 5-year quantitative backtesting universe, dynamic composite ranking engine, and YouTube claims validation lab.",
+  "universe": {
+    "period": "5 Years (2021-11-01 to 2026-11-01)",
+    "assets": [
+      {
+        "symbol": "SPY",
+        "name": "SPDR S&P 500 ETF Trust",
+        "category": "Equities",
+        "tick_size": 0.01,
+        "leverage": 1.0,
+        "maker_fee_bps": 0.5,
+        "taker_fee_bps": 1.0,
+        "slippage_pct": 0.02
+      },
+      {
+        "symbol": "QQQ",
+        "name": "Invesco QQQ Trust (Nasdaq-100)",
+        "category": "Equities",
+        "tick_size": 0.01,
+        "leverage": 1.0,
+        "maker_fee_bps": 0.5,
+        "taker_fee_bps": 1.0,
+        "slippage_pct": 0.02
+      },
+      {
+        "symbol": "GC=F",
+        "name": "Gold Futures (COMEX)",
+        "category": "Commodities",
+        "tick_size": 0.1,
+        "leverage": 10.0,
+        "maker_fee_bps": 1.0,
+        "taker_fee_bps": 2.0,
+        "slippage_pct": 0.03
+      },
+      {
+        "symbol": "CL=F",
+        "name": "Crude Oil WTI Futures (NYMEX)",
+        "category": "Commodities",
+        "tick_size": 0.01,
+        "leverage": 10.0,
+        "maker_fee_bps": 1.0,
+        "taker_fee_bps": 2.5,
+        "slippage_pct": 0.04
+      },
+      {
+        "symbol": "EURUSD=X",
+        "name": "Euro / US Dollar FX Spot",
+        "category": "Forex",
+        "tick_size": 1e-05,
+        "leverage": 30.0,
+        "maker_fee_bps": 0.8,
+        "taker_fee_bps": 1.2,
+        "slippage_pct": 0.015
+      },
+      {
+        "symbol": "GBPJPY=X",
+        "name": "British Pound / Japanese Yen FX Spot",
+        "category": "Forex",
+        "tick_size": 0.001,
+        "leverage": 30.0,
+        "maker_fee_bps": 1.2,
+        "taker_fee_bps": 1.8,
+        "slippage_pct": 0.025
+      },
+      {
+        "symbol": "BTC-USD",
+        "name": "Bitcoin / US Dollar",
+        "category": "Crypto",
+        "tick_size": 0.5,
+        "leverage": 3.0,
+        "maker_fee_bps": 2.0,
+        "taker_fee_bps": 5.0,
+        "slippage_pct": 0.05
+      },
+      {
+        "symbol": "ETH-USD",
+        "name": "Ethereum / US Dollar",
+        "category": "Crypto",
+        "tick_size": 0.05,
+        "leverage": 3.0,
+        "maker_fee_bps": 2.0,
+        "taker_fee_bps": 5.0,
+        "slippage_pct": 0.06
+      },
+      {
+        "symbol": "^TNX",
+        "name": "CBOE 10-Year Treasury Yield Index",
+        "category": "Rates",
+        "tick_size": 0.001,
+        "leverage": 1.0,
+        "maker_fee_bps": 1.0,
+        "taker_fee_bps": 2.0,
+        "slippage_pct": 0.02
+      }
+    ]
+  }
+}

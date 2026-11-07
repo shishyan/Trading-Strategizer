@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Strategizer — 5-Year Quant Strategy Matrix & YouTube Claim Verification Lab</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080c14',
+              card: '#0d131f',
+              cardHover: '#121a2b',
+              border: '#1e293b',
+              accent: '#3b82f6',
+              green: '#10b981',
+              red: '#ef4444',
+              amber: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/terminal.css">
+  
+  <!-- Chart.js for Multi-Equity & Drawdown Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#080c14] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Global Header / Terminal Ribbon -->
+  <header class="border-b border-[#1e293b] bg-[#0d131f]/95 backdrop-blur sticky top-0 z-50 px-4 py-2.5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      
+      <!-- Brand & Status -->
+      <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-blue-500/20">
+            TS
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono font-bold text-sm tracking-tight text-white">TRADING STRATEGIZER</span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">5Y-QUANT</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-mono">trading.shishyan.in // Empirical Engine</p>
+          </div>
+        </div>
+
+        <!-- Mobile View Quick Status -->
+        <div class="flex items-center gap-2 text-xs font-mono md:hidden text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>LIVE DATA</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex items-center gap-1.5 bg-[#080c14] p-1 rounded-xl border border-[#1e293b] text-xs font-mono w-full md:w-auto justify-center">
+        <button id="tab-btn-leaderboard" onclick="switchMainTab('leaderboard')" class="px-3.5 py-1.5 rounded-lg bg-[#0d131f] text-white font-bold border border-blue-500/40 shadow-sm flex items-center gap-1.5 transition">
+          <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>5Y Leaderboard</span>
+        </button>
+        <button id="tab-btn-claims" onclick="switchMainTab('claims')" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+          <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-400"></i>
+          <span>YouTube Claim Lab</span>
+        </button>
+        <button id="tab-btn-rulebook" onclick="switchMainTab('rulebook')" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+          <i data-lucide="code-2" class="w-3.5 h-3.5 text-blue-400"></i>
+          <span>Quant Rulebook</span>
+        </button>
+      </nav>
+
+      <!-- Global Ticker / Live Stats -->
+      <div class="hidden lg:flex items-center gap-4 text-xs font-mono text-slate-400 border-l border-[#1e293b] pl-4">
+        <div>
+          <span class="text-slate-500">Backtest Window:</span>
+          <span class="text-slate-200 font-semibold ml-1">2021–2026 (5Y)</span>
+        </div>
+        <div>
+          <span class="text-slate-500">Benchmark SPY:</span>
+          <span class="text-emerald-400 font-semibold ml-1">+84.2%</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>EMPIRICAL ZERO-BIAS</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Dynamic View Container -->
+  <main class="flex-1 max-w-7xl mx-auto w-full p-4 space-y-6">
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 1: 5-YEAR STRATEGY LEADERBOARD                                        -->
+    <!-- ========================================================================= -->
+    <section id="view-leaderboard" class="space-y-5">
+      
+      <!-- Top Metrics Banner -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="bg-[#0d131f] border border-[#1e293b] p-3.5 rounded-xl shadow">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>TOTAL STRATEGIES</span>
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-400"></i>
+          </div>
+          <p class="text-xl font-bold font-mono text-white" id="stat-strat-count">7 Models</p>
+          <p class="text-[11px] text-slate-500">5-Year Continuous Tick Backtest</p>
+        </div>
+        
+        <div class="bg-[#0d131f] border border-[#1e293b] p-3.5 rounded-xl shadow">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>TOP PERFORMER (5Y)</span>
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i>
+          </div>
+          <p class="text-xl font-bold font-mono text-emerald-400">+312.4%</p>
+          <p class="text-[11px] text-slate-400 truncate">Triple Supertrend (BTC)</p>
+        </div>
+
+        <div class="bg-[#0d131f] border border-[#1e293b] p-3.5 rounded-xl shadow">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>BEST RISK-ADJUSTED</span>
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          </div>
+          <p class="text-xl font-bold font-mono text-blue-400">2.32 Sharpe</p>
+          <p class="text-[11px] text-slate-400 truncate">Poisson Stat-Arb (SPY/QQQ)</p>
+        </div>
+
+        <div class="bg-[#0d131f] border border-[#1e293b] p-3.5 rounded-xl shadow">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>BENCHMARK ALPHA</span>
+            <i data-lucide="trending-up" class="w-3.5 h-3.5 text-purple-400"></i>
+          </div>
+          <p class="text-xl font-bold font-mono text-indigo-400">+228.2%</p>
+          <p class="text-[11px] text-slate-500">Max Alpha Over SPY (+84.2%)</p>
+        </div>
+      </div>
+
+      <!-- Interactive Multi-Equity Curve Chart -->
+      <div class="bg-[#0d131f] border border-[#1e293b] p-4 rounded-2xl shadow-lg space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1e293b] pb-3">
+          <div>
+            <h2 class="text-sm font-bold font-mono uppercase tracking-wider text-slate-200 flex items-center gap-2">
+              <i data-lucide="line-chart" class="w-4 h-4 text-blue-400"></i>
+              5-Year Normalized Equity Growth ($10,000 Starting Capital)
+            </h2>
+            <p class="text-xs text-slate-400">Interactive comparison: Top Quant Models vs. SPY Benchmark</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-mono">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span> Top 3 Strategies
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 text-slate-300">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span> SPY Benchmark
+            </span>
+          </div>
+        </div>
+
+        <div class="h-64 sm:h-72 w-full">
+          <canvas id="equityChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="bg-[#0d131f] border border-[#1e293b] p-3 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-slate-400">Filter Asset:</span>
+          <button onclick="filterAssetClass('ALL')" id="filter-all" class="px-2.5 py-1 rounded bg-blue-600 text-white font-bold transition">ALL</button>
+          <button onclick="filterAssetClass('Equities')" id="filter-equities" class="px-2.5 py-1 rounded bg-[#080c14] text-slate-300 hover:text-white border border-[#1e293b] transition">Equities</button>
+          <button onclick="filterAssetClass('Crypto')" id="filter-crypto" class="px-2.5 py-1 rounded bg-[#080c14] text-slate-300 hover:text-white border border-[#1e293b] transition">Crypto</button>
+          <button onclick="filterAssetClass('Commodities')" id="filter-commodities" class="px-2.5 py-1 rounded bg-[#080c14] text-slate-300 hover:text-white border border-[#1e293b] transition">Commodities</button>
+          <button onclick="filterAssetClass('Forex')" id="filter-forex" class="px-2.5 py-1 rounded bg-[#080c14] text-slate-300 hover:text-white border border-[#1e293b] transition">Forex</button>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5">
+            <span class="text-slate-400">Sort By:</span>
+            <select id="sort-selector" onchange="applySorting(this.value)" class="bg-[#080c14] border border-[#1e293b] rounded-lg px-2.5 py-1 text-slate-200 focus:outline-none">
+              <option value="composite_score">Composite Score (Default)</option>
+              <option value="total_return_pct">5Y Return % (High to Low)</option>
+              <option value="sharpe_ratio">Sharpe Ratio</option>
+              <option value="profit_factor">Profit Factor</option>
+              <option value="win_rate_pct">Win Rate %</option>
+              <option value="max_drawdown_pct">Lowest Max Drawdown</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategy Leaderboard Table -->
+      <div class="bg-[#0d131f] border border-[#1e293b] rounded-xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-[#080c14] text-slate-400 border-b border-[#1e293b] uppercase text-[10px]">
+              <tr>
+                <th class="p-3 text-center">Rank</th>
+                <th class="p-3">Strategy / Model</th>
+                <th class="p-3">Category</th>
+                <th class="p-3">Primary Asset</th>
+                <th class="p-3 text-center">5Y Return</th>
+                <th class="p-3 text-center">CAGR</th>
+                <th class="p-3 text-center">Profit Factor</th>
+                <th class="p-3 text-center">Win Rate</th>
+                <th class="p-3 text-center">Max Drawdown</th>
+                <th class="p-3 text-center">Sharpe</th>
+                <th class="p-3 text-center">Score</th>
+                <th class="p-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-tbody" class="divide-y divide-[#1e293b]">
+              <!-- Dynamically Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 2: YOUTUBE CLAIM VERIFICATION LAB                                     -->
+    <!-- ========================================================================= -->
+    <section id="view-claims" class="hidden space-y-6">
+      
+      <!-- Section Introduction -->
+      <div class="bg-[#0d131f] border border-[#1e293b] p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-red-500/10 text-red-400 border border-red-500/20">
+              YOUTUBE VERIFICATION HUB
+            </span>
+            <span class="text-xs text-slate-400">Piggyback Reaction & Empirical Audit</span>
+          </div>
+          <h2 class="text-lg font-bold font-mono text-white mt-1">Viral Video Strategy Audits (Claim vs. 5-Year Reality)</h2>
+          <p class="text-xs text-slate-400">
+            We extract the exact trading rules from top YouTube channels, backtest them across 5 years of real market data, and generate complete video reviews.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="px-3 py-1.5 rounded-lg bg-[#080c14] border border-[#1e293b] text-xs font-mono text-center">
+            <span class="text-slate-400 block text-[10px]">AUDITED VIDEOS</span>
+            <span class="text-white font-bold text-sm">3 Videos</span>
+          </div>
+          <div class="px-3 py-1.5 rounded-lg bg-[#080c14] border border-[#1e293b] text-xs font-mono text-center">
+            <span class="text-slate-400 block text-[10px]">AVG CLAIM GAP</span>
+            <span class="text-amber-400 font-bold text-sm">-35.8% WR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Claims Selector Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="claims-card-grid">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Active Claim Deep Dive Card -->
+      <div id="active-claim-container" class="bg-[#0d131f] border border-[#1e293b] rounded-2xl overflow-hidden shadow-2xl p-5 space-y-6">
+        <!-- Rendered via JS -->
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 3: STRATEGY DEEP-DIVE & RULEBOOK                                      -->
+    <!-- ========================================================================= -->
+    <section id="view-rulebook" class="hidden space-y-6">
+      
+      <div class="bg-[#0d131f] border border-[#1e293b] p-4 rounded-2xl">
+        <h2 class="text-base font-bold font-mono text-white flex items-center gap-2">
+          <i data-lucide="book-open" class="w-4 h-4 text-blue-400"></i>
+          Quantitative Strategy Rulebook & Mathematical Specifications
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">
+          Exact indicator formulas, entry/exit condition trees, and risk management logic implemented in the backtesting engine.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <!-- Strategy Selector List -->
+        <div class="bg-[#0d131f] border border-[#1e293b] rounded-xl p-3 space-y-2" id="rulebook-nav-list">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- Strategy Details View -->
+        <div class="lg:col-span-2 bg-[#0d131f] border border-[#1e293b] rounded-xl p-5 space-y-4" id="rulebook-detail-panel">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Global Footer with Bottom Disclaimer -->
+  <footer class="border-t border-[#1e293b] bg-[#0d131f] p-4 mt-8">
+    <div class="max-w-7xl mx-auto space-y-3">
+      
+      <!-- Required Bottom Disclaimer Banner -->
+      <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2 text-amber-300">
+          <span class="text-base">⚠️</span>
+          <span>
+            <strong>Simulated Paper Capital Notice:</strong> All results generated using <strong>$10,000 simulated test capital</strong> per instrument. This is strictly an objective quantitative verification study with zero financial advice or endorsements.
+          </span>
+        </div>
+        <span class="font-mono text-[11px] text-amber-400 font-bold whitespace-nowrap">
+          Total Tested: $70,000 Paper Money
+        </span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-2 pt-1">
+        <div>
+          <span>Platform: <strong>Trading Strategizer</strong></span> • 
+          <span>Host: <a href="https://trading.shishyan.in" class="text-blue-400 hover:underline">trading.shishyan.in</a></span> • 
+          <span>Channel: <strong class="text-indigo-400">@influenzian</strong></span>
+        </div>
+        <div>
+          <span>Engine: Python / VectorBT / Backtesting.py / Pandas</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/chart-engine.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/claim-lab.js"></script>
+  <script src="js/rulebook.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
