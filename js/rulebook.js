@@ -1,4 +1,5 @@
 // Strategy Rulebook & Mathematical Definitions Controller
+// Home-Manager Light Theme integration
 
 let activeRulebookStrategyId = "strat_fvg_01";
 
@@ -21,16 +22,16 @@ function renderRulebookNav() {
   TRADING_DATA.strategies.forEach(s => {
     const isSelected = s.id === activeRulebookStrategyId;
     const btn = document.createElement('button');
-    btn.className = `w-full text-left p-3 rounded-lg border text-xs font-mono transition flex items-center justify-between ${
-      isSelected ? 'bg-blue-600/20 border-blue-500 text-white font-bold' : 'bg-[#080c14] border-[#1e293b] text-slate-400 hover:text-white'
+    btn.className = `w-full text-left p-3 rounded-xl border text-xs font-mono transition flex items-center justify-between shadow-sm ${
+      isSelected ? 'bg-teal-50 border-teal-500 text-teal-900 font-bold ring-1 ring-teal-500/30' : 'bg-white border-slate-200/80 text-slate-600 hover:border-slate-300'
     }`;
     btn.onclick = () => selectStrategyForRulebook(s.id);
     btn.innerHTML = `
       <div>
-        <span class="block text-slate-200 font-bold">${s.name}</span>
-        <span class="text-[10px] text-slate-500">${s.category} • ${s.primary_asset}</span>
+        <span class="block text-slate-800 font-bold">${s.name}</span>
+        <span class="text-[10px] text-slate-400">${s.category} • ${s.primary_asset}</span>
       </div>
-      <span class="text-xs font-bold ${s.metrics.profit_factor >= 1.8 ? 'text-emerald-400' : 'text-blue-400'}">
+      <span class="text-xs font-bold ${s.metrics.profit_factor >= 1.8 ? 'text-teal-700' : 'text-blue-700'}">
         ${s.metrics.profit_factor} PF
       </span>
     `;
@@ -44,58 +45,82 @@ function renderRulebookDetail(id) {
   if (!container || !s) return;
 
   container.innerHTML = `
-    <div class="border-b border-[#1e293b] pb-3 flex items-center justify-between">
+    <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
       <div>
-        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-teal-50 text-teal-700 border border-teal-200">
           ${s.category.toUpperCase()}
         </span>
-        <h2 class="text-lg font-bold text-white mt-1">${s.name}</h2>
-        <p class="text-xs text-slate-400">${s.description}</p>
+        <h2 class="text-lg font-bold text-slate-900 mt-1">${s.name}</h2>
+        <p class="text-xs text-slate-500">${s.description}</p>
       </div>
       <div class="text-right text-xs font-mono">
-        <span class="text-slate-500 block">5Y SCORE</span>
-        <span class="text-emerald-400 font-bold text-base">${s.metrics.composite_score} / 100</span>
+        <span class="text-slate-400 block text-[10px]">5Y COMPOSITE SCORE</span>
+        <span class="text-teal-700 font-bold text-lg">${s.metrics.composite_score} / 100</span>
       </div>
     </div>
 
-    <!-- Parameter Matrix -->
-    <div>
-      <h3 class="text-xs font-mono font-bold uppercase text-slate-300 mb-2">Engine Parameters</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
-        <div class="p-2.5 rounded-lg bg-[#080c14] border border-[#1e293b]">
-          <span class="text-slate-500 block text-[10px]">TIMEFRAME</span>
-          <span class="text-white font-bold">${s.timeframe}</span>
+    <!-- Strategy Parameters & Core Mathematical Logic -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+        <span class="text-[11px] font-mono uppercase font-bold text-slate-700 flex items-center gap-1.5">
+          <i data-lucide="sliders" class="w-3.5 h-3.5 text-teal-600"></i>
+          Quantitative Parameters
+        </span>
+        <div class="space-y-1.5 text-xs font-mono">
+          ${Object.entries(s.parameters).map(([k, v]) => `
+            <div class="flex items-center justify-between py-1 border-b border-slate-200/50">
+              <span class="text-slate-500">${k}:</span>
+              <span class="font-bold text-slate-800">${v}</span>
+            </div>
+          `).join('')}
         </div>
-        <div class="p-2.5 rounded-lg bg-[#080c14] border border-[#1e293b]">
-          <span class="text-slate-500 block text-[10px]">RISK MODEL</span>
-          <span class="text-amber-400 font-bold truncate block">${s.risk_model}</span>
-        </div>
-        <div class="p-2.5 rounded-lg bg-[#080c14] border border-[#1e293b]">
-          <span class="text-slate-500 block text-[10px]">PRIMARY ASSET</span>
-          <span class="text-white font-bold">${s.primary_asset}</span>
-        </div>
-        <div class="p-2.5 rounded-lg bg-[#080c14] border border-[#1e293b]">
-          <span class="text-slate-500 block text-[10px]">TESTED UNIVERSE</span>
-          <span class="text-slate-300 font-bold">${s.tested_assets.join(', ')}</span>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+        <span class="text-[11px] font-mono uppercase font-bold text-slate-700 flex items-center gap-1.5">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-600"></i>
+          Risk Management Framework
+        </span>
+        <div class="space-y-1.5 text-xs font-mono">
+          <div class="flex items-center justify-between py-1 border-b border-slate-200/50">
+            <span class="text-slate-500">Risk Model:</span>
+            <span class="font-bold text-slate-800">${s.risk_model}</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-200/50">
+            <span class="text-slate-500">Primary Timeframe:</span>
+            <span class="font-bold text-slate-800">${s.timeframe}</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-200/50">
+            <span class="text-slate-500">Tested Universe:</span>
+            <span class="font-bold text-teal-700">${s.tested_assets.join(', ')}</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Mathematical Specification & Pseudocode -->
-    <div>
-      <h3 class="text-xs font-mono font-bold uppercase text-slate-300 mb-2">Algorithm Definition & Pseudocode</h3>
-      <div class="bg-[#080c14] p-3 rounded-lg border border-[#1e293b] font-mono text-xs text-slate-300 space-y-1 overflow-x-auto">
-        <p class="text-blue-400">// Signal Generation Engine for ${s.name}</p>
-        <p><span class="text-purple-400">def</span> <span class="text-amber-300">evaluate_setup</span>(bar, previous_bars):</p>
-        <p class="pl-4">atr = calculate_atr(period=14)</p>
-        <p class="pl-4">ema_trend = calculate_ema(period=200)</p>
-        <p class="pl-4 text-slate-500">// Check directional condition</p>
-        <p class="pl-4"><span class="text-purple-400">if</span> bar.close &gt; ema_trend <span class="text-purple-400">and</span> identify_imbalance(bar, previous_bars):</p>
-        <p class="pl-8">entry = bar.open</p>
-        <p class="pl-8">stop_loss = calculate_sl(bar, type='STRUCTURAL')</p>
-        <p class="pl-8">take_profit = entry + (entry - stop_loss) * 2.0</p>
-        <p class="pl-8"><span class="text-purple-400">return</span> Order(side='LONG', entry=entry, sl=stop_loss, tp=take_profit)</p>
+    <!-- Backtest Performance Summary Grid -->
+    <div class="space-y-2 pt-1">
+      <span class="text-[11px] font-mono uppercase font-bold text-slate-700">5-Year Continuous Tick Performance (2021–2026)</span>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-center">
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200 shadow-sm">
+          <span class="text-slate-400 block text-[9px] uppercase">CAGR</span>
+          <span class="text-slate-900 font-bold text-sm">+${s.metrics.annualized_cagr_pct.toFixed(1)}%</span>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200 shadow-sm">
+          <span class="text-slate-400 block text-[9px] uppercase">Profit Factor</span>
+          <span class="text-teal-700 font-bold text-sm">${s.metrics.profit_factor.toFixed(2)}</span>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200 shadow-sm">
+          <span class="text-slate-400 block text-[9px] uppercase">Win Rate</span>
+          <span class="text-slate-900 font-bold text-sm">${s.metrics.win_rate_pct.toFixed(1)}%</span>
+        </div>
+        <div class="bg-white p-2.5 rounded-lg border border-slate-200 shadow-sm">
+          <span class="text-slate-400 block text-[9px] uppercase">Max Drawdown</span>
+          <span class="text-rose-600 font-bold text-sm">-${s.metrics.max_drawdown_pct.toFixed(1)}%</span>
+        </div>
       </div>
     </div>
   `;
+
+  if (window.lucide) lucide.createIcons();
 }

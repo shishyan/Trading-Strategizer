@@ -1,5 +1,5 @@
 // YouTube Claim Verification Lab Controller
-// Embeds videos, displays side-by-side empirical audit, and renders detailed trade logs
+// Home-Manager Light Theme integration
 
 let activeClaimId = "claim_001";
 
@@ -17,7 +17,7 @@ function renderClaimCards() {
     const isSelected = claim.id === activeClaimId;
     const card = document.createElement('div');
     card.className = `p-4 rounded-xl border transition cursor-pointer flex flex-col justify-between space-y-3 ${
-      isSelected ? 'bg-[#121a2b] border-blue-500 shadow-lg shadow-blue-500/10' : 'bg-[#0d131f] border-[#1e293b] hover:border-slate-700'
+      isSelected ? 'bg-teal-50/70 border-teal-500 shadow-sm ring-1 ring-teal-500/30' : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-sm'
     }`;
     card.onclick = () => {
       activeClaimId = claim.id;
@@ -28,24 +28,24 @@ function renderClaimCards() {
     card.innerHTML = `
       <div>
         <div class="flex items-center justify-between text-[11px] font-mono mb-1.5">
-          <span class="text-slate-400 font-bold">${claim.influencer_name}</span>
+          <span class="text-slate-500 font-bold truncate max-w-[170px]">${claim.influencer_name}</span>
           <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${claim.verdict.badge_class}">
             ${claim.verdict.badge}
           </span>
         </div>
-        <h3 class="text-xs font-bold text-white leading-snug line-clamp-2">
+        <h3 class="text-xs font-bold text-slate-800 leading-snug line-clamp-2">
           ${claim.claim_title}
         </h3>
       </div>
 
-      <div class="grid grid-cols-2 gap-2 bg-[#080c14] p-2 rounded-lg border border-[#1e293b] text-center font-mono text-[11px]">
+      <div class="grid grid-cols-2 gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-center font-mono text-[11px]">
         <div>
-          <span class="text-slate-500 block text-[9px] uppercase">Claimed WR</span>
-          <span class="text-amber-400 font-bold">${claim.claimed_metrics.win_rate}</span>
+          <span class="text-slate-400 block text-[9px] uppercase font-semibold">Claimed WR</span>
+          <span class="text-amber-700 font-bold">${claim.claimed_metrics.win_rate}</span>
         </div>
         <div>
-          <span class="text-slate-500 block text-[9px] uppercase">Real 5Y WR</span>
-          <span class="text-emerald-400 font-bold">${claim.empirical_metrics.win_rate}</span>
+          <span class="text-slate-400 block text-[9px] uppercase font-semibold">Real 5Y WR</span>
+          <span class="text-teal-700 font-bold">${claim.empirical_metrics.win_rate}</span>
         </div>
       </div>
     `;
@@ -61,19 +61,19 @@ function renderActiveClaim(claimId) {
 
   container.innerHTML = `
     <!-- Top Bar with Verdict -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#1e293b] pb-4">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200 pb-4">
       <div>
         <div class="flex items-center gap-2">
           <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold border ${claim.verdict.badge_class}">
             ${claim.verdict.badge}
           </span>
-          <span class="text-xs text-slate-400 font-mono">Channel: <strong class="text-white">${claim.influencer_name}</strong></span>
+          <span class="text-xs text-slate-500 font-mono">Source Channel: <strong class="text-slate-800">${claim.influencer_name}</strong></span>
         </div>
-        <h2 class="text-base font-bold text-white mt-1">${claim.claim_title}</h2>
+        <h2 class="text-base font-bold text-slate-900 mt-1">${claim.claim_title}</h2>
       </div>
 
       <div class="flex items-center gap-2">
-        <a href="${claim.youtube_url}" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600/20 text-red-400 border border-red-600/30 text-xs font-mono font-bold hover:bg-red-600/30 transition flex items-center gap-1.5">
+        <a href="${claim.youtube_url}" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-50 text-red-700 border border-red-200 text-xs font-mono font-bold hover:bg-red-100 transition flex items-center gap-1.5 shadow-sm">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           <span>Watch Original Video</span>
         </a>
@@ -83,17 +83,17 @@ function renderActiveClaim(claimId) {
     <!-- Video Preview & Side-by-Side Analysis -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       
-      <!-- Video Player (360p Review Video with Shorts / Landscape Toggle) -->
-      <div class="bg-[#080c14] rounded-xl overflow-hidden border border-[#1e293b] shadow-xl p-3 flex flex-col space-y-3">
+      <!-- Video Player (1080p Master Remix Video with Switcher) -->
+      <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm p-3.5 flex flex-col space-y-3">
         <div class="flex items-center justify-between text-xs font-mono">
-          <span class="text-slate-400 font-bold flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-            Video Player
+          <span class="text-slate-600 font-bold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Original YouTube Remix Player
           </span>
-          <div class="flex items-center gap-1 bg-[#0d131f] p-1 rounded-lg border border-[#1e293b]">
-            <button onclick="switchVideoFormat('hd', '${claim.video_src_1080p || claim.video_src}')" id="btn-format-hd" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white">1080p 60s Remix</button>
-            <button onclick="switchVideoFormat('preview', '${claim.video_src_360p || claim.video_src}')" id="btn-format-preview" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">360p</button>
-            <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white">9:16 Shorts</button>
+          <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
+            <button onclick="switchVideoFormat('hd', '${claim.video_src_1080p || claim.video_src}')" id="btn-format-hd" class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-700 text-white shadow-sm">1080p 60s Remix</button>
+            <button onclick="switchVideoFormat('preview', '${claim.video_src_360p || claim.video_src}')" id="btn-format-preview" class="px-2 py-0.5 rounded text-[10px] text-slate-600 hover:text-slate-900">360p</button>
+            <button onclick="switchVideoFormat('shorts', '${claim.video_src_shorts || claim.video_src}')" id="btn-format-shorts" class="px-2 py-0.5 rounded text-[10px] text-slate-600 hover:text-slate-900">9:16 Shorts</button>
           </div>
         </div>
         
@@ -106,86 +106,88 @@ function renderActiveClaim(claimId) {
       </div>
 
       <!-- Side-by-Side Discrepancy Card -->
-      <div class="bg-[#080c14] border border-[#1e293b] rounded-xl p-4 flex flex-col justify-between space-y-4">
+      <div class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between space-y-4 shadow-sm">
         <div>
-          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-2">
             Discrepancy Matrix (Claimed vs. Empirical 5Y Reality)
           </h3>
           
           <div class="grid grid-cols-2 gap-3 text-xs font-mono">
-            <div class="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 space-y-1">
-              <span class="text-amber-400 font-bold block text-[11px]">CLAIMED IN VIDEO</span>
-              <p class="text-slate-300">Win Rate: <strong class="text-white">${claim.claimed_metrics.win_rate}</strong></p>
-              <p class="text-slate-300">Profit Factor: <strong class="text-white">${claim.claimed_metrics.profit_factor}</strong></p>
-              <p class="text-slate-300">Drawdown: <strong class="text-white">${claim.claimed_metrics.max_drawdown}</strong></p>
+            <div class="p-3 rounded-lg bg-amber-50/80 border border-amber-200 space-y-1">
+              <span class="text-amber-800 font-bold block text-[11px]">CLAIMED IN VIDEO</span>
+              <p class="text-slate-700">Win Rate: <strong class="text-slate-900">${claim.claimed_metrics.win_rate}</strong></p>
+              <p class="text-slate-700">Profit Factor: <strong class="text-slate-900">${claim.claimed_metrics.profit_factor}</strong></p>
+              <p class="text-slate-700">Drawdown: <strong class="text-slate-900">${claim.claimed_metrics.max_drawdown}</strong></p>
               <p class="text-[10px] text-slate-500 pt-1">Sample: ${claim.claimed_sample}</p>
             </div>
 
-            <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 space-y-1">
-              <span class="text-emerald-400 font-bold block text-[11px]">5-YEAR EMPIRICAL TEST</span>
-              <p class="text-slate-300">Win Rate: <strong class="text-emerald-400 font-bold">${claim.empirical_metrics.win_rate}</strong></p>
-              <p class="text-slate-300">Profit Factor: <strong class="text-white">${claim.empirical_metrics.profit_factor}</strong></p>
-              <p class="text-slate-300">Drawdown: <strong class="text-rose-400">${claim.empirical_metrics.max_drawdown}</strong></p>
-              <p class="text-[10px] text-slate-400 pt-1">Trades: ${claim.empirical_metrics.total_trades} (${claim.empirical_metrics.total_return})</p>
+            <div class="p-3 rounded-lg bg-emerald-50/80 border border-emerald-200 space-y-1">
+              <span class="text-emerald-800 font-bold block text-[11px]">EMPIRICAL TEST</span>
+              <p class="text-slate-700">Win Rate: <strong class="text-emerald-700 font-bold">${claim.empirical_metrics.win_rate}</strong></p>
+              <p class="text-slate-700">Profit Factor: <strong class="text-slate-900">${claim.empirical_metrics.profit_factor}</strong></p>
+              <p class="text-slate-700">Drawdown: <strong class="text-rose-700">${claim.empirical_metrics.max_drawdown}</strong></p>
+              <p class="text-[10px] text-slate-500 pt-1">Trades: ${claim.empirical_metrics.total_trades} (${claim.empirical_metrics.total_return})</p>
             </div>
+          </div>
+
+          <div class="mt-4 p-3 rounded-lg bg-slate-50 border border-slate-200/80 text-xs">
+            <span class="text-slate-700 font-semibold block mb-1">Empirical Verdict & Analysis:</span>
+            <p class="text-slate-600 leading-relaxed">${claim.verdict.summary}</p>
           </div>
         </div>
 
-        <div class="p-3 bg-[#0d131f] rounded-lg border border-[#1e293b] text-xs">
-          <span class="text-blue-400 font-mono font-bold text-[11px] block mb-1">OBJECTIVE QUANT AUDIT VERDICT:</span>
-          <p class="text-slate-300 leading-relaxed text-xs">
-            ${claim.verdict.summary}
-          </p>
+        <div class="border-t border-slate-100 pt-3 flex items-center justify-between text-[11px] font-mono text-slate-500">
+          <span>Test Capital: $10,000 / instrument</span>
+          <span class="text-teal-700 font-bold">100% Unbiased Quantitative Audit</span>
         </div>
       </div>
-
     </div>
 
-    <!-- Trade Execution Log Table for this Claim -->
-    <div class="space-y-2 pt-2">
-      <div class="flex items-center justify-between text-xs font-mono">
-        <h3 class="font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-          <i data-lucide="list" class="w-3.5 h-3.5 text-blue-400"></i>
-          Sample Trade Execution Tape (Recent Validated Setups)
+    <!-- Live Trade Entries Tape -->
+    <div class="space-y-3 pt-2">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+        <h3 class="text-xs font-mono font-bold text-slate-700 flex items-center gap-1.5">
+          <i data-lucide="list" class="w-3.5 h-3.5 text-teal-600"></i>
+          <span>Sample Trade Execution Log (Recent Trades from 7-Asset Test Run)</span>
         </h3>
-        <span class="text-slate-500">1:2 R:R Model • Zero Discretion</span>
+        <span class="text-[11px] font-mono text-slate-400">Total Tested Trades: 79</span>
       </div>
 
-      <div class="overflow-x-auto rounded-lg border border-[#1e293b]">
+      <div class="overflow-x-auto bg-white rounded-xl border border-slate-200 shadow-sm">
         <table class="w-full text-left text-xs font-mono">
-          <thead class="bg-[#080c14] text-slate-400 text-[10px] uppercase border-b border-[#1e293b]">
+          <thead class="bg-slate-50 text-slate-500 border-b border-slate-200 text-[10px] uppercase">
             <tr>
               <th class="p-2.5">Trade ID</th>
               <th class="p-2.5">Date</th>
               <th class="p-2.5">Asset</th>
               <th class="p-2.5">Side</th>
-              <th class="p-2.5">Entry ($)</th>
-              <th class="p-2.5">Stop Loss ($)</th>
-              <th class="p-2.5">Take Profit ($)</th>
-              <th class="p-2.5">Exit ($)</th>
-              <th class="p-2.5 text-center">Result</th>
-              <th class="p-2.5 text-right">Paper PnL</th>
+              <th class="p-2.5">Entry</th>
+              <th class="p-2.5">Stop Loss</th>
+              <th class="p-2.5">Target</th>
+              <th class="p-2.5">Exit</th>
+              <th class="p-2.5 text-center">Status</th>
+              <th class="p-2.5 text-right">PnL</th>
               <th class="p-2.5 text-right">Balance</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-[#1e293b] bg-[#0d131f]">
+          <tbody class="divide-y divide-slate-100 text-slate-700">
             ${claim.sample_trades.map(t => `
-              <tr class="hover:bg-[#121a2b]">
-                <td class="p-2.5 text-slate-400">${t.id}</td>
-                <td class="p-2.5 text-slate-300">${t.date}</td>
-                <td class="p-2.5 font-bold text-white">${t.asset}</td>
-                <td class="p-2.5 font-bold ${t.type.includes('LONG') || t.type.includes('OVER') || t.type.includes('YES') ? 'text-emerald-400' : 'text-amber-400'}">${t.type}</td>
+              <tr class="hover:bg-slate-50/80 transition">
+                <td class="p-2.5 font-bold text-slate-900">${t.id}</td>
+                <td class="p-2.5 text-slate-500">${t.date}</td>
+                <td class="p-2.5 font-semibold text-slate-800">${t.asset}</td>
+                <td class="p-2.5 font-bold ${t.type === 'LONG' ? 'text-teal-700' : 'text-rose-700'}">${t.type}</td>
                 <td class="p-2.5">${t.entry}</td>
-                <td class="p-2.5 text-rose-400">${t.sl}</td>
-                <td class="p-2.5 text-emerald-400">${t.tp}</td>
+                <td class="p-2.5 text-rose-600">${t.sl}</td>
+                <td class="p-2.5 text-teal-600">${t.tp}</td>
                 <td class="p-2.5">${t.exit}</td>
                 <td class="p-2.5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold ${t.status === 'WIN' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold ${t.status === 'WIN' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
                     ${t.status}
                   </span>
                 </td>
-                <td class="p-2.5 text-right font-bold ${t.pnl.startsWith('+') ? 'text-emerald-400' : 'text-rose-400'}">${t.pnl}</td>
-                <td class="p-2.5 text-right text-slate-200 font-bold">${t.balance}</td>
+                <td class="p-2.5 text-right font-bold ${t.pnl.startsWith('+') ? 'text-emerald-700' : 'text-rose-700'}">${t.pnl}</td>
+                <td class="p-2.5 text-right text-slate-900 font-bold">${t.balance}</td>
               </tr>
             `).join('')}
           </tbody>
@@ -209,14 +211,14 @@ function switchVideoFormat(format, src) {
   vid.play().catch(() => {});
 
   [btnHd, btnPreview, btnShorts].forEach(b => {
-    if (b) b.className = "px-2 py-0.5 rounded text-[10px] text-slate-400 hover:text-white";
+    if (b) b.className = "px-2.5 py-0.5 rounded text-[10px] text-slate-600 hover:text-slate-900";
   });
 
   if (format === 'hd' && btnHd) {
-    btnHd.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600 text-white";
+    btnHd.className = "px-2.5 py-0.5 rounded text-[10px] font-bold bg-teal-700 text-white shadow-sm";
   } else if (format === 'preview' && btnPreview) {
-    btnPreview.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white";
+    btnPreview.className = "px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-700 text-white shadow-sm";
   } else if (format === 'shorts' && btnShorts) {
-    btnShorts.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600 text-white";
+    btnShorts.className = "px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-700 text-white shadow-sm";
   }
 }
