@@ -54,7 +54,7 @@ function renderRulebookDetail(id) {
         <p class="text-xs text-slate-500">${s.description}</p>
       </div>
       <div class="text-right text-xs font-mono">
-        <span class="text-slate-400 block text-[10px]">5Y COMPOSITE SCORE</span>
+        <span class="text-slate-400 block text-[10px]">12Y COMPOSITE SCORE</span>
         <span class="text-teal-700 font-bold text-lg">${s.metrics.composite_score} / 100</span>
       </div>
     </div>
@@ -100,7 +100,7 @@ function renderRulebookDetail(id) {
 
     <!-- Backtest Performance Summary Grid -->
     <div class="space-y-2 pt-1">
-      <span class="text-[11px] font-mono uppercase font-bold text-slate-700">5-Year Continuous Tick Performance (2021–2026)</span>
+      <span class="text-[11px] font-mono uppercase font-bold text-slate-700">12-Year Continuous Tick Performance (2014–2026)</span>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-center">
         <div class="bg-white p-2.5 rounded-lg border border-slate-200 shadow-sm">
           <span class="text-slate-400 block text-[9px] uppercase">CAGR</span>

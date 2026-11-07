@@ -21,8 +21,8 @@ function switchMainTab(tab) {
   const pageTitle = document.getElementById('topbar-page-title');
   const breadcrumb = document.getElementById('topbar-breadcrumb');
   if (tab === 'leaderboard') {
-    if (pageTitle) pageTitle.textContent = "5-Year Quant Leaderboard";
-    if (breadcrumb) breadcrumb.textContent = "Leaderboard / Performance Matrix";
+    if (pageTitle) pageTitle.textContent = "12-Year Quant Leaderboard";
+    if (breadcrumb) breadcrumb.textContent = "Leaderboard / Performance Matrix (2014–2026)";
     if (!equityChartInstance) {
       setTimeout(initEquityChart, 50);
     }

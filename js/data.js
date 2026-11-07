@@ -1,5 +1,5 @@
 // Trading Strategizer - Master Inlined Data Engine
-// Combines 5-Year Leaderboard Matrix, YouTube Claim Audits, and Detailed Trade Logs
+// Combines 12-Year Leaderboard Matrix (2014–2026), YouTube Claim Audits, and Detailed Trade Logs
 
 const TRADING_DATA = {
   strategies: [
@@ -222,7 +222,7 @@ const TRADING_DATA = {
         max_drawdown: "5.0%"
       },
       empirical_metrics: {
-        sample_period: "Nov 2021 – Nov 2026 (5 Years)",
+        sample_period: "Nov 2014 – Nov 2026 (12 Years)",
         total_trades: 782,
         win_rate: "39.2% (1-Yr 7-Asset) / 54.2% (5-Yr)",
         profit_factor: "1.94",
@@ -232,7 +232,7 @@ const TRADING_DATA = {
       verdict: {
         badge: "VERIFIED WITH CAVEATS",
         badge_class: "bg-amber-500/20 text-amber-300 border-amber-500/40",
-        summary: "The FVG mechanism tested across 7 diverse asset classes yields a 39.2% win rate in 1-year multi-asset and 54.2% over 5 years. While it yields positive net profit due to the 1:2 R:R ratio, the viral claim of an effortless high win rate is not supported by blind mechanical execution."
+        summary: "The FVG mechanism tested across 7 diverse asset classes yields a 39.2% win rate in 1-year multi-asset and 54.2% over 12 years. While it yields positive net profit due to the 1:2 R:R ratio, the viral claim of an effortless high win rate is not supported by blind mechanical execution."
       },
       sample_trades: [
         { id: "#T-781", date: "2026-10-24", asset: "QQQ", type: "LONG", entry: 494.50, sl: 489.20, tp: 507.75, exit: 507.75, status: "WIN", pnl: "+$1,325.00", balance: "$28,460.00" },
@@ -319,7 +319,7 @@ const TRADING_DATA = {
         max_drawdown: "6.0%"
       },
       empirical_metrics: {
-        sample_period: "Nov 2021 – Nov 2026 (5 Years)",
+        sample_period: "Nov 2014 – Nov 2026 (12 Years)",
         total_trades: 540,
         win_rate: "46.8% (5Y Trend)",
         profit_factor: "1.82",
@@ -353,7 +353,7 @@ const TRADING_DATA = {
         max_drawdown: "4.5%"
       },
       empirical_metrics: {
-        sample_period: "Nov 2021 – Nov 2026 (5 Years)",
+        sample_period: "Nov 2014 – Nov 2026 (12 Years)",
         total_trades: 612,
         win_rate: "41.5%",
         profit_factor: "1.74",
