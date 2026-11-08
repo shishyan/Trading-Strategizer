@@ -1,9 +1,9 @@
 name: Daily YouTube Strategy Audit Pipeline (@influenzian)
 
+# Trigger disabled per user request: stopped automatic execution
 on:
-  schedule:
-    # Runs twice daily at 06:00 UTC and 18:00 UTC (processes batches up to daily quota limit)
-    - cron: '0 6,18 * * *'
+  # schedule:
+  #   - cron: '0 6,18 * * *'
   workflow_dispatch:
     inputs:
       batch_limit:

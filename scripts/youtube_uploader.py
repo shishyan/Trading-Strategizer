@@ -58,7 +58,7 @@ def get_authenticated_service(client_secrets_file, token_file):
     authorized_http = google_auth_httplib2.AuthorizedHttp(creds, http=http)
     return build("youtube", "v3", http=authorized_http)
 
-def upload_video(youtube, video_path, title, description, tags, category_id="27", privacy="public"):
+def upload_video(youtube, video_path, title, description, tags, category_id="27", privacy="unlisted"):
     body = {
         "snippet": {
             "title": title[:100],
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     parser.add_argument("--title", required=True)
     parser.add_argument("--desc", required=True)
     parser.add_argument("--tags", default="trading,backtest,quant,influenzian,finance")
-    parser.add_argument("--privacy", default="public")
+    parser.add_argument("--privacy", default="unlisted")
     parser.add_argument("--secrets", default="client_secrets.json")
     parser.add_argument("--token", default="youtube_token.json")
     args = parser.parse_args()

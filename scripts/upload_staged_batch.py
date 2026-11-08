@@ -45,7 +45,7 @@ Total Tested: $70,000 Paper Money."""
 
     try:
         yt = get_authenticated_service("client_secrets.json", "youtube_token.json")
-        upload_video(yt, video_path, title, desc, tags, privacy="public")
+        upload_video(yt, video_path, title, desc, tags, privacy="unlisted")
     except Exception as e:
         print(f"Upload error: {e}")
         print("Note: Ensure YOUTUBE_TOKEN_JSON secret is added to the GitHub repository to enable automatic pushing.")
